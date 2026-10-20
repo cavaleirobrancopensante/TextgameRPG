@@ -5,7 +5,7 @@ S = json.load(open(os.path.join(os.path.dirname(__file__), "..", "data", "story.
 MODS = {"STR": 1, "DEX": -1, "CON": 0, "INT": 2, "WIS": 0, "CHA": 3}
 
 def new():
-    return dict(scene="c1_ford", hp=18, max_hp=18, xp=1, level=4, coin=180, pipe=5, gambit=0, flags={},
+    return dict(scene="c0_prologue", hp=18, max_hp=18, xp=1, level=4, coin=180, pipe=5, gambit=0, renown=0, corruption=0, flags={},
                 court=["Roland", "Aymer", "Bors", "Alcuin", "Anselm", "Sam", "Wat"], clocks={"siege": 0, "delve": 0})
 def val(st, k): return st["clocks"].get(k[6:], 0) if k.startswith("clock.") else st.get(k, 0)
 def req(st, r):
@@ -62,7 +62,7 @@ def roll(st, stat):
 ends, locks, visits = collections.Counter(), collections.Counter(), collections.Counter()
 N = 20000
 for _ in range(N):
-    st = new(); cur = enter(st, "c1_ford"); steps = 0
+    st = new(); cur = enter(st, "c0_prologue"); steps = 0
     while steps < 600:
         steps += 1; visits[cur] += 1; sc = S[cur]
         if "ending" in sc: ends[sc["ending"]] += 1; break

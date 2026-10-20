@@ -4,10 +4,12 @@ import json, re, sys, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "story"))
 import dsl
-for m in ["ch1", "ch2", "ch3", "ch4", "ch5", "ch6", "ch7"]:
+for m in ["ch0", "ch1", "ch1b", "ch2", "ch2b", "ch3", "ch3b", "ch4", "ch4b", "ch5", "ch5b", "ch6", "ch6b", "ch7", "ch7b"]:
     __import__(m)
 
-START, DEATH = "c1_ford", "death"
+sys.path.insert(0, HERE)
+import patches  # noqa: applies post-import edits
+START, DEATH = "c0_prologue", "death"
 scenes = {}
 errors, warns = [], []
 for s in dsl.SCENES:

@@ -28,7 +28,7 @@ func new_game() -> void:
 	state = {
 		"scene": meta.get("start", "c1_ford"),
 		"hp": 18, "max_hp": 18, "xp": 1, "level": 4, "coin": 180,
-		"pipe": 5, "gambit": 0,
+		"pipe": 5, "gambit": 0, "renown": 0, "corruption": 0,
 		"flags": {}, "court": ["Roland", "Aymer", "Bors", "Alcuin", "Anselm", "Sam", "Wat"],
 		"clocks": {"siege": 0, "delve": 0},
 		"log": [],
@@ -209,7 +209,7 @@ func load_game() -> bool:
 	if typeof(d) != TYPE_DICTIONARY or not scenes.has(d.get("scene", "")):
 		return false
 	state = d
-	for k in ["hp", "max_hp", "xp", "level", "coin", "pipe", "gambit"]:
+	for k in ["hp", "max_hp", "xp", "level", "coin", "pipe", "gambit", "renown", "corruption"]:
 		state[k] = int(state.get(k, 0))
 	for k in state["clocks"].keys():
 		state["clocks"][k] = int(state["clocks"][k])

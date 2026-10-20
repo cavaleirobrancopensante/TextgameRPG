@@ -159,6 +159,10 @@ func _update_stats() -> void:
 	var t := "HP %d/%d   Lv %d   XP %d   Coin %d   Pipe %d" % [s["hp"], s["max_hp"], s["level"], s["xp"], s["coin"], s["pipe"]]
 	if s["gambit"] > 0:
 		t += "   Gambit %d" % s["gambit"]
+	if s.get("renown", 0) != 0:
+		t += "   Renown %d" % s["renown"]
+	if s.get("corruption", 0) > 0:
+		t += "   Taint %d" % s["corruption"]
 	var cl: Dictionary = s["clocks"]
 	if cl.get("siege", 0) > 0:
 		t += "\nSiege above " + _pips(cl["siege"])

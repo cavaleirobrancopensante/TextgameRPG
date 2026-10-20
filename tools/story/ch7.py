@@ -203,7 +203,7 @@ Then he closes the lid and hands it back.
 "You would have given it to me," he says wonderingly. "I did not think anyone would."
 
 He steps aside. "Go down. I will not follow. I am tired of following."
-""", [ch("Go on to Level Five.", "c7_l5")], enter=["set:malgareth_trusted", "add:xp:2"], redirect=RD, chapter=C)
+""", [ch("Go on to Level Five.", "c7_l5")], enter=["set:malgareth_trusted", "set:malgareth_ok", "add:xp:2"], redirect=RD, chapter=C)
 
 sc("c7_malg_stand", "Words Standing Up", """
 You do not sit. Malgareth lifts one eyebrow, amused, and lets the silence drag.
@@ -237,7 +237,7 @@ Anselm lifts the Skull. The stalls fall back into silence. Malgareth stares at i
 "Take it away," he says in a very small voice. "*Please.*"
 
 He retreats into the dark.
-""", [ch("Go on to Level Five.", "c7_l5")], enter=["add:xp:1", "set:malgareth_broken"], redirect=RD, chapter=C)
+""", [ch("Go on to Level Five.", "c7_l5")], enter=["add:xp:1", "set:malgareth_broken", "set:malgareth_ok"], redirect=RD, chapter=C)
 
 sc("c7_l5", "Level Five: The Cistern of Names", """
 A round hall, a great black cistern in the centre, lined with the names of the dead. Thousands. Each carved in a different hand.
@@ -331,15 +331,6 @@ Its voice is very gentle.
     ch("Refuse. Stand and fight.", "c7_final_fight"),
     ch("Kneel.", "end_bargain"),
 ], redirect=RD, chapter=C)
-
-sc("c8_victory_hub", "The Quiet", """
-The hum is gone. For the first time in a thousand years, the mountain is silent.
-
-Above, a long way up, a bell rings. It sounds like the end of something.
-""", [
-    ch("Carry the Skull back up. The war is over.", "end_triumph"),
-    ch("Stay below. Keep the Skull here, with the thing that cannot be allowed to rise again.", "end_sacrifice"),
-], chapter=C)
 
 # ------- endings -------
 sc("end_triumph", "The Kingdom Under the Mountain", """

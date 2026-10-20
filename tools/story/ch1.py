@@ -152,15 +152,15 @@ sc("c1_halbrecht_ok", "Respect Without Titles", """
 He studies you a long moment, then nods once. "Halbrecht. Smith. Remember it."
 
 You will. It's the first honest conversation you've had in a year.
-""", [ch("Decide the fate of the Skull. It cannot stay with the column.", "c1_skull_split")], chapter=C)
+""", [ch("Spend the hours you have.", "c1_hub")], chapter=C)
 
 sc("c1_halbrecht_proud", "Pride", """
 Halbrecht's mouth twists. "Majesty," he says, flat as a plank. But he stays, because he has no better road. You've bought obedience; you've not bought him.
-""", [ch("Decide the fate of the Skull.", "c1_skull_split")], chapter=C)
+""", [ch("Spend the hours you have.", "c1_hub")], chapter=C)
 
 sc("c1_halbrecht_coin", "Bought Loyalty", """
 He weighs the coins in his palm. "That'll feed the children for a week." He tucks them away. It's not warmth. It's a contract.
-""", [ch("Decide the fate of the Skull.", "c1_skull_split")], enter=["set:halbrecht_ally"], chapter=C)
+""", [ch("Spend the hours you have.", "c1_hub")], enter=["set:halbrecht_ally"], chapter=C)
 
 sc("c1_skull_split", "Where Should the Skull Sleep?", """
 Aymer's warning plays on you: *wood burns.* The lich wants the Skull, and a column of four hundred refugees and a dying king is the worst place for it to be.
@@ -180,10 +180,10 @@ Anselm touches your hand in blessing and the little party vanishes into the grey
 "They will be found or they will not," Roland says quietly. "And so will we."
 
 You turn the column north, toward Aldermont.
-""", [ch("North, to Aldermont.", "c2_gate")], chapter=C)
+""", [ch("North, to Aldermont.", "c1_night")], chapter=C)
 
 sc("c1_skull_kept", "The King Keeps His Own", """
 You will not give a relic of your house to the wilderness. The Skull stays with the column.
 
 Anselm bows, grateful and afraid. Every nightfall from now will be a vigil.
-""", [ch("North, to Aldermont.", "c2_gate")], chapter=C)
+""", [ch("North, to Aldermont.", "c1_night")], chapter=C)

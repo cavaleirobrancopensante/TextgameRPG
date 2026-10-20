@@ -36,8 +36,8 @@ The Weald is ancient oak and old hunting lanes. The column strings out along the
 
 Rumour says dwarven path-wardens still watch the hill roads north. Rumour says the Skull's bearer went that way. The road forks: a lane through the deep wood, a track along the ridge, and an old cart-road through a ruined hamlet.
 """, [
-    rnd("Take the deep wood.", ["c3_dng_patrol", "c3_dng_wolves", "c3_dng_hamlet"]),
-    rnd("Take the ridge.", ["c3_dng_patrol", "c3_dng_hamlet", "c3_dng_rest"]),
+    rnd("Take the deep wood.", ["c3_dng_patrol", "c3_dng_wolves", "c3_dng_hamlet", "c3_dng_shrine", "c3_dng_ghost"]),
+    rnd("Take the ridge.", ["c3_dng_patrol", "c3_dng_hamlet", "c3_dng_rest", "c3_dng_hermit", "c3_dng_orchard"]),
     ch("Take the ruined hamlet road.", "c3_dng_hamlet"),
 ], chapter=C)
 
@@ -52,23 +52,23 @@ They are looking for the box.
 
 sc("c3_patrol_fight", "Ambush", """
 Roland, Hartmann and the others burst from cover. It is brief and ugly. Grey cloaks fall; the horses scream; and in the end one rider pins a knight, and Roland takes its head clean off.
-""", [ch("Go on toward the hills.", "c3_hills")], enter=["add:hp:-3", "add:xp:1"], chapter=C)
+""", [ch("Go on toward the hills.", "c3_leg")], enter=["add:hp:-3", "add:xp:1"], chapter=C)
 
 sc("c3_patrol_hit", "A Silent Column", """
 You pass four hundred people in the shadow of the beeches without a single cough. The riders ride by, fifty feet away, and the horses do not even turn their heads.
 
 It is the best order you have ever given.
-""", [ch("Go on toward the hills.", "c3_hills")], enter=["add:xp:1", "add:gambit:1"], chapter=C)
+""", [ch("Go on toward the hills.", "c3_leg")], enter=["add:xp:1", "add:gambit:1"], chapter=C)
 
 sc("c3_patrol_mixed", "A Near Thing", """
 They pass — but one child sneezes. A rider halts, head turning. Alcuin covers the noise with a loud, off-key lay about a drunk friar.
 
 It works. Barely.
-""", [ch("Go on toward the hills.", "c3_hills")], chapter=C)
+""", [ch("Go on toward the hills.", "c3_leg")], chapter=C)
 
 sc("c3_patrol_miss", "Spotted", """
 The riders wheel. The column scatters. Before the Court can form, they are on the baggage — and two are dead before Roland drives them off.
-""", [ch("Gather the survivors and go on.", "c3_hills")], enter=["add:hp:-3", "add:coin:-20"], chapter=C)
+""", [ch("Gather the survivors and go on.", "c3_leg")], enter=["add:hp:-3", "add:coin:-20"], chapter=C)
 
 sc("c3_dng_wolves", "Wolves", """
 They are not undead wolves. They are only hungry ones, driven out of the hills by something worse. A dozen of them, thin as sticks, circling the cart-line.
@@ -81,11 +81,11 @@ sc("c3_wolves_fed", "Mercy", """
 Wolves are simple creatures. They eat, they leave, and in the morning there are tracks all around the camp that are not a threat but a courtesy.
 
 Hunger recedes along the hills.
-""", [ch("Go on toward the hills.", "c3_hills")], chapter=C)
+""", [ch("Go on toward the hills.", "c3_leg")], chapter=C)
 
 sc("c3_wolves_fight", "Steel and Teeth", """
 Three wolves die. A fourth takes a bite out of your calf before Aymer's blade finds it. The pack scatters.
-""", [ch("Go on toward the hills.", "c3_hills")], chapter=C)
+""", [ch("Go on toward the hills.", "c3_leg")], chapter=C)
 
 sc("c3_dng_hamlet", "The Silent Hamlet", """
 Eleven cottages. A well. Not a single living soul, and not a single corpse. The doors are open. The hearths are cold.
@@ -94,20 +94,20 @@ On the green, someone has laid a long line of folded clothes, one set for every 
 """, [
     ch("Search the cottages for supplies.", "c3_hamlet_search"),
     ch("Burn the hamlet. Whatever lives here must not follow.", "c3_hamlet_burn"),
-    ch("Pass through in silence and move on.", "c3_hills"),
+    ch("Pass through in silence and move on.", "c3_leg"),
 ], chapter=C)
 
 sc("c3_hamlet_search", "What the Hamlet Kept", """
 Under the floorboards of the smith's cottage you find a cache: dried meat, a wineskin, a scatter of old coin. Someone prepared for a long siege and then — walked out. Calmly. In their sleep, maybe.
-""", [ch("Take it and go.", "c3_hills")], enter=["add:coin:40", "add:hp:2", "set:hamlet_unease"], chapter=C)
+""", [ch("Take it and go.", "c3_leg")], enter=["add:coin:40", "add:hp:2", "set:hamlet_unease"], chapter=C)
 
 sc("c3_hamlet_burn", "Ashes", """
 You burn it all, and watch the smoke climb. It feels like a dedication, or an apology.
-""", [ch("Go on.", "c3_hills")], enter=["add:xp:1"], chapter=C)
+""", [ch("Go on.", "c3_leg")], enter=["add:xp:1"], chapter=C)
 
 sc("c3_dng_rest", "A Quiet Night", """
 No dead. No wolves. Just the stars through the leaves and the weight of the Skull's absence. You sleep, which you didn't think you could.
-""", [ch("Go on toward the hills.", "c3_hills")], enter=["add:hp:4"], chapter=C)
+""", [ch("Go on toward the hills.", "c3_leg")], enter=["add:hp:4"], chapter=C)
 
 sc("c3_hills", "The Hill Road", """
 At the end of the Weald the land climbs. Pines. Scree. A cold wind with iron in it.
