@@ -1,0 +1,6 @@
+.godot/
+*.import
+export_presets.cfg
+*.apk
+*.aab
+__pycache__/

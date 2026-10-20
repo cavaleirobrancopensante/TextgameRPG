@@ -1,0 +1,3552 @@
+{
+ "meta": {
+  "title": "The King in Flight",
+  "start": "c1_ford",
+  "death": "death"
+ },
+ "scenes": {
+  "c1_ford": {
+   "id": "c1_ford",
+   "title": "The Ford",
+   "text": "The Ford is behind you, and the Ford is lost.\n\nYou saw the line break. You saw the dead rise out of the river as if the water had only been holding them. Your army, your nobles, half your name — gone into the black current while the lich Malgareth walked the far bank and did not even hurry.\n\nNow it is night on the south road. Sir Roland carries the standard, torn but still lifted. Your Court straggles behind you: knights, envoys, two frightened squires. And in a wooden box strapped to Father Anselm's back, wrapped in a grey cloth, rides the one thing that made the dead *stop* at the Ford.\n\nThe Skull of Saint Gregory II the Undying.\n\nSir Roland waits for your order.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Rally the Court. They must see a king, not a refugee.",
+     "goto": "c1_rally"
+    },
+    {
+     "text": "Study the road. Where will the dead come from, and when?",
+     "goto": "c1_study"
+    },
+    {
+     "text": "Take a moment alone. Fill the pipe.",
+     "goto": "c1_pipe"
+    }
+   ]
+  },
+  "c1_rally": {
+   "id": "c1_rally",
+   "title": "A King Before Them",
+   "text": "You stand where the firelight finds you and say what a king must say: that the Ford was a battle, not an ending; that every man who walked out of it is a man the lich did not take.\n\nRoland kneels first. Then Aymer. Then — slowly, like men remembering a habit — the rest.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Make them believe it.",
+     "check": {
+      "stat": "CHA",
+      "hit": "c1_rally_hit",
+      "mixed": "c1_rally_mixed",
+      "miss": "c1_rally_miss"
+     }
+    }
+   ]
+  },
+  "c1_rally_hit": {
+   "id": "c1_rally_hit",
+   "title": "They Believe",
+   "text": "Something returns to their faces. Not hope — discipline, which is better. The squires stop shaking. Alcuin the envoy murmurs that he has heard worse speeches from kings who won.\n\nYou have made a Court again.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Move on toward Tollmere.",
+     "goto": "c1_tollmere"
+    }
+   ],
+   "on_enter": [
+    "add:xp:1",
+    "add:gambit:1",
+    "set:rallied"
+   ]
+  },
+  "c1_rally_mixed": {
+   "id": "c1_rally_mixed",
+   "title": "Hollow Cheer",
+   "text": "They stand. They cheer, a little. But you hear in it the sound of men who need you to be right and are afraid you are not.\n\nIt will do. It must.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Move on toward Tollmere.",
+     "goto": "c1_tollmere"
+    }
+   ],
+   "on_enter": [
+    "add:xp:1"
+   ]
+  },
+  "c1_rally_miss": {
+   "id": "c1_rally_miss",
+   "title": "Silence",
+   "text": "The words come out sounding like a will being read. Nobody cheers. A squire starts to weep and tries to hide it.\n\nRoland, loyal Roland, simply says, \"Lead on, sire.\" It is the kindest thing anyone has said all day.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Move on toward Tollmere.",
+     "goto": "c1_tollmere"
+    }
+   ]
+  },
+  "c1_study": {
+   "id": "c1_study",
+   "title": "The Chessmaster's Eye",
+   "text": "You close your eyes and lay the board out in your head: the river, the Ford, the road, the hills north-east where the dwarves are said to dig. The lich does not tire. The dead do not sleep. But armies — even dead ones — move on roads, and roads are lines, and lines can be read.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Read the lines.",
+     "check": {
+      "stat": "INT",
+      "hit": "c1_study_hit",
+      "mixed": "c1_study_mixed",
+      "miss": "c1_study_miss"
+     }
+    }
+   ]
+  },
+  "c1_study_hit": {
+   "id": "c1_study_hit",
+   "title": "Lines on the Map",
+   "text": "Three days. The legion will take Tollmere in three days, and Aldermont in perhaps eight. North of the Weald the roads thin, and thin roads are slow roads. The old dwarf-halls — the Deepholt — would be the nearest place with walls worth the name.\n\nYou have *seen* the war, and you hold two moves of it in your hand.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Move on toward Tollmere.",
+     "goto": "c1_tollmere"
+    }
+   ],
+   "on_enter": [
+    "add:gambit:2",
+    "set:knows_roads"
+   ]
+  },
+  "c1_study_mixed": {
+   "id": "c1_study_mixed",
+   "title": "A Partial Map",
+   "text": "You can see the shape of it, though not the timing. Tollmere will fall. Aldermont might hold. The north is a question mark.\n\nOne Gambit, then — one move you can bend the board with.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Move on toward Tollmere.",
+     "goto": "c1_tollmere"
+    }
+   ],
+   "on_enter": [
+    "add:gambit:1"
+   ]
+  },
+  "c1_study_miss": {
+   "id": "c1_study_miss",
+   "title": "Too Many Pieces",
+   "text": "Every line crosses another. You cannot tell which of them is the enemy's and which is your own fear. You open your eyes feeling older.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Move on toward Tollmere.",
+     "goto": "c1_tollmere"
+    }
+   ]
+  },
+  "c1_pipe": {
+   "id": "c1_pipe",
+   "title": "The Pipe",
+   "text": "You sit apart, on a fallen cart, and open the little leather case that was the one personal thing you carried out of the capital. Three leaves in it, dried in three different ways. A king's small vices.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Fen-Reed — steadies the hands.",
+     "goto": "c1_pipe_done",
+     "req": "pipe>=1",
+     "fx": [
+      "add:pipe:-1",
+      "add:hp:3",
+      "set:steady"
+     ]
+    },
+    {
+     "text": "Skyleaf — sharpens the mind.",
+     "goto": "c1_pipe_done",
+     "req": "pipe>=1",
+     "fx": [
+      "add:pipe:-1",
+      "add:gambit:1"
+     ]
+    },
+    {
+     "text": "Deepcure — endures.",
+     "goto": "c1_pipe_done",
+     "req": "pipe>=1",
+     "fx": [
+      "add:pipe:-1",
+      "add:hp:6"
+     ]
+    },
+    {
+     "text": "Put it away. There'll be worse nights to save it for.",
+     "goto": "c1_pipe_done"
+    }
+   ]
+  },
+  "c1_pipe_done": {
+   "id": "c1_pipe_done",
+   "title": "The Smoke Clears",
+   "text": "For a few breaths the world is only a king, a cart, and a thread of smoke. Then Roland coughs politely, and the world returns.\n\n\"The road, sire?\"",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Take the road to Tollmere.",
+     "goto": "c1_tollmere"
+    }
+   ]
+  },
+  "c1_tollmere": {
+   "id": "c1_tollmere",
+   "title": "The Gate of Tollmere",
+   "text": "Tollmere is a river town of smiths and tanners, and it is already dying. Smoke from the east quarter. Refugees clogging the gate. And standing in the middle of the road with a drawn sword and open, milky eyes, Sir Aymer of the Ford.\n\nYour knight. One of the men you thought lost. He is not blinking, and his lips are moving with words that are not his.\n\n\"The Master sends greeting to the Gregorian,\" he says in a voice like a cellar door. \"The Master asks only for the sleeping thing. The skull sleeps in a wooden box. And wood burns.\"\n\nBehind you, Anselm's hand tightens on the box.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Speak to the man inside him. Break the lich's grip with your voice.",
+     "check": {
+      "stat": "CHA",
+      "hit": "c1_aymer_hit",
+      "mixed": "c1_aymer_mixed",
+      "miss": "c1_aymer_miss"
+     }
+    },
+    {
+     "text": "Order Roland to put Aymer down before he strikes.",
+     "goto": "c1_aymer_fight"
+    },
+    {
+     "text": "Have Anselm lift the Skull. Make the dead thing stop.",
+     "goto": "c1_aymer_skull",
+     "req": "court:Anselm"
+    }
+   ]
+  },
+  "c1_aymer_hit": {
+   "id": "c1_aymer_hit",
+   "title": "Aymer Returns",
+   "text": "\"Aymer. Aymer of the Ford. You held my left flank at Brightwater when the others ran. Come back.\"\n\nSomething flickers behind the milk. The sword shakes. And then the knight collapses to his knees and vomits black water, and weeps, and says your name — your *real* name — over and over.\n\nThe lich's hand is out of him. For now.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Raise him up and bring him with the column.",
+     "goto": "c1_halbrecht"
+    }
+   ],
+   "on_enter": [
+    "add:xp:1",
+    "set:aymer_free",
+    "set:aymer_loyal"
+   ]
+  },
+  "c1_aymer_mixed": {
+   "id": "c1_aymer_mixed",
+   "title": "Half a Man",
+   "text": "Aymer breaks — but not cleanly. He drops the sword, clutching his head, and speaks in two voices at once: his own, begging, and the cellar-door voice laughing.\n\n\"It *wants* the skull,\" he gasps. \"It told me where to find you. It has other servants on the road. Hurry.\"\n\nThen he's yours again, shaking, and you are warned.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Bring him with the column. Quickly.",
+     "goto": "c1_halbrecht"
+    }
+   ],
+   "on_enter": [
+    "set:aymer_free",
+    "set:malgareth_warned",
+    "add:coin:-10"
+   ]
+  },
+  "c1_aymer_miss": {
+   "id": "c1_aymer_miss",
+   "title": "The Sword Comes Down",
+   "text": "The words die between you. Aymer lunges. Roland barely gets the standard-pole in the way, and the blade opens your arm to the bone before the knights drag Aymer off you.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Hold him down. This will take another way.",
+     "goto": "c1_aymer_skull",
+     "req": "court:Anselm"
+    },
+    {
+     "text": "Hold him down. This will take another way.",
+     "goto": "c1_aymer_fight",
+     "req": "!court:Anselm"
+    }
+   ],
+   "on_enter": [
+    "add:hp:-4"
+   ]
+  },
+  "c1_aymer_skull": {
+   "id": "c1_aymer_skull",
+   "title": "The Saint Speaks",
+   "text": "Anselm opens the box. Only a crack. Only for the length of a breath.\n\nThe Skull does not glow. It does not speak. It simply *is*, in the way a stone in a river is, and the lich's voice goes out of Aymer like a candle in a draught.\n\nHe sags into Roland's arms. Anselm shuts the box with trembling fingers and says, to no one, \"It costs me, every time.\"\n\nYou have shown the Skull to a crowd. Hundreds saw. That cannot be unseen.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Bring Aymer with the column.",
+     "goto": "c1_halbrecht"
+    }
+   ],
+   "on_enter": [
+    "set:aymer_free",
+    "set:skull_seen",
+    "add:xp:1"
+   ]
+  },
+  "c1_aymer_fight": {
+   "id": "c1_aymer_fight",
+   "title": "Blood on the Road",
+   "text": "Roland and Bors take him between them. It is not a duel; it is a sad, brutal wrestle in the mud, and when it ends Aymer is bleeding from the scalp, unconscious but alive, and the milk has drained from his eyes.\n\nThe lich's hold is broken, but a man does not return from that without scars.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Carry him with the column.",
+     "goto": "c1_halbrecht"
+    }
+   ],
+   "on_enter": [
+    "set:aymer_free",
+    "add:hp:-2"
+   ]
+  },
+  "c1_halbrecht": {
+   "id": "c1_halbrecht",
+   "title": "The Smith Who Won't Kneel",
+   "text": "Tollmere's smith, a barrel-chested man named Halbrecht, has taken it upon himself to lead the refugees out. He eyes you without bowing.\n\n\"I hear you're the king. I hear you lost the Ford. I don't care. I have four hundred people who need a road, and I'll follow whoever has one.\"\n\nAround you, the knights stiffen.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "\"I have a road. Follow me, Halbrecht, and call me what you like.\"",
+     "goto": "c1_halbrecht_ok",
+     "fx": [
+      "set:halbrecht_ally",
+      "add:xp:1"
+     ]
+    },
+    {
+     "text": "\"You will address your king properly.\"",
+     "goto": "c1_halbrecht_proud",
+     "fx": [
+      "set:halbrecht_cold"
+     ]
+    },
+    {
+     "text": "Offer coin for his people's obedience. (30 coin)",
+     "goto": "c1_halbrecht_coin",
+     "req": "coin>=30",
+     "fx": [
+      "add:coin:-30"
+     ]
+    }
+   ]
+  },
+  "c1_halbrecht_ok": {
+   "id": "c1_halbrecht_ok",
+   "title": "Respect Without Titles",
+   "text": "He studies you a long moment, then nods once. \"Halbrecht. Smith. Remember it.\"\n\nYou will. It's the first honest conversation you've had in a year.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Decide the fate of the Skull. It cannot stay with the column.",
+     "goto": "c1_skull_split"
+    }
+   ]
+  },
+  "c1_halbrecht_proud": {
+   "id": "c1_halbrecht_proud",
+   "title": "Pride",
+   "text": "Halbrecht's mouth twists. \"Majesty,\" he says, flat as a plank. But he stays, because he has no better road. You've bought obedience; you've not bought him.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Decide the fate of the Skull.",
+     "goto": "c1_skull_split"
+    }
+   ]
+  },
+  "c1_halbrecht_coin": {
+   "id": "c1_halbrecht_coin",
+   "title": "Bought Loyalty",
+   "text": "He weighs the coins in his palm. \"That'll feed the children for a week.\" He tucks them away. It's not warmth. It's a contract.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Decide the fate of the Skull.",
+     "goto": "c1_skull_split"
+    }
+   ],
+   "on_enter": [
+    "set:halbrecht_ally"
+   ]
+  },
+  "c1_skull_split": {
+   "id": "c1_skull_split",
+   "title": "Where Should the Skull Sleep?",
+   "text": "Aymer's warning plays on you: *wood burns.* The lich wants the Skull, and a column of four hundred refugees and a dying king is the worst place for it to be.\n\nAnselm has not slept since the Ford. He can carry it into the hills, away from the army, toward whatever safe place the dwarves may still hold. But he cannot go alone.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "Send Anselm with Sir Bors and the squire Wat into the hills — a small, quiet party.",
+     "goto": "c1_skull_hills",
+     "fx": [
+      "set:skull_in_hills",
+      "set:sent_bors",
+      "court:-Anselm",
+      "court:-Bors",
+      "court:-Wat"
+     ]
+    },
+    {
+     "text": "Send Anselm with Sir Aymer — who knows what the lich wants — and the squire Sam.",
+     "goto": "c1_skull_hills",
+     "fx": [
+      "set:skull_in_hills",
+      "set:sent_aymer",
+      "court:-Anselm",
+      "court:-Aymer",
+      "court:-Sam"
+     ]
+    },
+    {
+     "text": "Keep the Skull. If the lich wants it, let him come through you.",
+     "goto": "c1_skull_kept",
+     "fx": [
+      "set:skull_kept"
+     ]
+    }
+   ]
+  },
+  "c1_skull_hills": {
+   "id": "c1_skull_hills",
+   "title": "Into the Hills",
+   "text": "Anselm touches your hand in blessing and the little party vanishes into the grey dawn, a priest, a knight, a youth, and a box. You watch until they are specks.\n\n\"They will be found or they will not,\" Roland says quietly. \"And so will we.\"\n\nYou turn the column north, toward Aldermont.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "North, to Aldermont.",
+     "goto": "c2_gate"
+    }
+   ]
+  },
+  "c1_skull_kept": {
+   "id": "c1_skull_kept",
+   "title": "The King Keeps His Own",
+   "text": "You will not give a relic of your house to the wilderness. The Skull stays with the column.\n\nAnselm bows, grateful and afraid. Every nightfall from now will be a vigil.",
+   "chapter": "Chapter I — The Ford",
+   "choices": [
+    {
+     "text": "North, to Aldermont.",
+     "goto": "c2_gate"
+    }
+   ]
+  },
+  "c2_gate": {
+   "id": "c2_gate",
+   "title": "A Shut Gate",
+   "text": "Aldermont sits on a bluff above the river Vellin, grey-walled and very quiet. The gates are shut. On the wall stands a knight in the white tabard of the Order of the Red Hand, and beside him a boy of fourteen in a lord's cloak that doesn't fit.\n\n\"No one enters,\" calls Brother-Captain Ulric Vance. \"The plague is in the town. Six days ago it took the lord. Go around, or go back.\"\n\nFour hundred people stand behind you in the cold. Some of them are coughing.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Persuade Vance. Appeal to the honour of his Order.",
+     "check": {
+      "stat": "CHA",
+      "hit": "c2_vance_hit",
+      "mixed": "c2_vance_mixed",
+      "miss": "c2_vance_miss"
+     }
+    },
+    {
+     "text": "Show the standard. Tell them who stands at their gate.",
+     "goto": "c2_vance_royal"
+    },
+    {
+     "text": "Ask what the plague actually is. Perhaps it is not what he fears.",
+     "goto": "c2_ask_plague"
+    }
+   ]
+  },
+  "c2_ask_plague": {
+   "id": "c2_ask_plague",
+   "title": "What Is the Sickness?",
+   "text": "\"A bite,\" Vance admits at last. \"The dead came through here a week ago — a patrol, a few. The bitten sicken and die. Then rise. We burned the lord on the sixth night. The boy kept his secret until the wall began to talk.\"\n\nA bite. Not a miasma. That changes everything.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Offer terms: inspection by a chirurgeon at the gate, no one bitten enters.",
+     "check": {
+      "stat": "INT",
+      "hit": "c2_vance_hit",
+      "mixed": "c2_vance_mixed",
+      "miss": "c2_vance_miss"
+     }
+    }
+   ],
+   "on_enter": [
+    "set:knows_bite"
+   ]
+  },
+  "c2_vance_royal": {
+   "id": "c2_vance_royal",
+   "title": "By Right",
+   "text": "The standard is old, and even Vance knows it. But a king in flight is only a man with a banner.\n\n\"I was bound to the Lord of Aldermont,\" he says slowly. \"He is dead. I am bound to this boy. Not to you.\"",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Remind him that the boy will die too, if the town falls.",
+     "check": {
+      "stat": "CHA",
+      "hit": "c2_vance_hit",
+      "mixed": "c2_vance_mixed",
+      "miss": "c2_vance_miss"
+     }
+    }
+   ]
+  },
+  "c2_vance_hit": {
+   "id": "c2_vance_hit",
+   "title": "The Gate Opens",
+   "text": "Something goes out of Vance's shoulders. He lowers his hand. \"I've waited a week for a man who would tell me the truth about what is coming. You're him.\" He turns. \"Open the gate!\"\n\nThe iron groans. The boy Aldric looks at you with enormous eyes, and Vance kneels on the wall, in armour, awkwardly.\n\n\"My sword is yours, sire. The Red Hand is yours.\"",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Enter Aldermont.",
+     "goto": "c2_town"
+    }
+   ],
+   "on_enter": [
+    "set:vance_sworn",
+    "add:xp:1",
+    "add:gambit:1"
+   ]
+  },
+  "c2_vance_mixed": {
+   "id": "c2_vance_mixed",
+   "title": "Conditions",
+   "text": "\"Inspection,\" Vance says. \"Every soul. Any bite stays outside the wall. Any bite.\"\n\nIt is a harsh rule. It is also the correct one. You nod.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Enter Aldermont under inspection.",
+     "goto": "c2_town"
+    }
+   ],
+   "on_enter": [
+    "set:vance_sworn",
+    "set:bitten_outside"
+   ]
+  },
+  "c2_vance_miss": {
+   "id": "c2_vance_miss",
+   "title": "A Shut Door",
+   "text": "\"No.\" Vance's voice does not move. \"Go around. Take the river road. I can't gamble four hundred lives on a stranger's word.\"\n\nYou are already turning to leave when a shout rings from the column — a woman has collapsed, her sleeve soaked in black. Everyone sees. Vance sees.\n\nIt is Maud, the mother of a boy called Tom. The bitten one is her son.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Show Vance the wound. Beg him to look.",
+     "goto": "c2_vance_late"
+    }
+   ]
+  },
+  "c2_vance_late": {
+   "id": "c2_vance_late",
+   "title": "A Look At the Leg",
+   "text": "Vance comes down from the wall himself and kneels beside the boy Tom. The calf is a ruin: black veins running up past the knee.\n\n\"Above the rot,\" he says very quietly. \"It might be taken. It would have to be done now. I have a chirurgeon, Brother Ferrand. If you're willing to try, I will open the gate for you.\"",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "\"Open the gate.\"",
+     "goto": "c2_town",
+     "fx": [
+      "set:vance_sworn",
+      "set:tom_bitten_at_gate",
+      "add:xp:1"
+     ]
+    }
+   ]
+  },
+  "c2_town": {
+   "id": "c2_town",
+   "title": "Inside the Walls",
+   "text": "Aldermont is a small town with big stone. A ring of granaries. A river-quay. A stew-pond that was once a moat. On the wall, Vance's Red Hand brothers keep a grim, careful watch.\n\nThe steward you will come to know as Lady Isobel — widow of the dead lord, a Vance by birth — meets you at the Guild Hall with a ledger already in hand.\n\n\"I will hate you for the whole of this,\" she says by way of welcome, \"and I will do it well. What do you want first?\"",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Meet with Brother Ferrand and learn the sickness.",
+     "goto": "c2_ferrand"
+    },
+    {
+     "text": "Meet with the Guild Master, Corvin Bael — owner of the grain.",
+     "goto": "c2_bael"
+    },
+    {
+     "text": "Walk the wall with young Aldric.",
+     "goto": "c2_aldric"
+    },
+    {
+     "text": "Call the council. The dead are close.",
+     "goto": "c2_hub",
+     "req": "bael_keys"
+    }
+   ]
+  },
+  "c2_ferrand": {
+   "id": "c2_ferrand",
+   "title": "The Chirurgeon of the Red Hand",
+   "text": "Brother Ferrand keeps records of the dead in a crabbed hand, with the same care other men give holy books. He is thin, calm, and dreadful to look at.\n\nHe sets out the rules he has learned in one week of horror: the bitten sicken in a day and die in three; the dead rise in a night; fire is the only certain answer; and — \"this I only half believe\" — the Skull, they say, makes them stop.\n\n\"If you have such a thing, sire, I would like very much to be wrong about it.\"",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "\"There is a boy named Tom. His leg is bitten. Can it be saved?\"",
+     "goto": "c2_tom",
+     "req": "!tom_done"
+    },
+    {
+     "text": "Ask Ferrand to teach you the signs of infection.",
+     "goto": "c2_ferrand_signs",
+     "req": "!ferrand_taught"
+    },
+    {
+     "text": "Return to the Guild Hall.",
+     "goto": "c2_town"
+    }
+   ]
+  },
+  "c2_ferrand_signs": {
+   "id": "c2_ferrand_signs",
+   "title": "The Rules of the Bite",
+   "text": "Ferrand counts them on his fingers.\n\n*One:* a bite is a death-sentence unless the limb is taken above the rot within a day.\n*Two:* the dead are slow in cold and fast in warmth.\n*Three:* they will not cross running water willingly.\n*Four:* they want the living — but they want the Skull more.\n\nYou commit it to memory. It is the first real knowledge you've had of the enemy.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Back to the question of the boy.",
+     "goto": "c2_ferrand"
+    }
+   ],
+   "on_enter": [
+    "set:ferrand_taught",
+    "set:knows_bite",
+    "add:gambit:1"
+   ]
+  },
+  "c2_tom": {
+   "id": "c2_tom",
+   "title": "The Amputation",
+   "text": "Tom is fourteen, white as milk, and trying hard not to cry. His mother Maud holds his hand. The black veins have reached the knee.\n\n\"Above the rot,\" Ferrand says. \"A hand-span above the knee. The saw is clean. The brandy is poor. And someone must hold the boy.\"\n\nHe looks at you. Not at your crown. At your hands.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Hold the boy yourself. A king who sends others to a bedside is no king.",
+     "goto": "c2_tom_hold"
+    },
+    {
+     "text": "Order Ferrand to proceed. You will wait outside with Maud.",
+     "goto": "c2_tom_outside"
+    },
+    {
+     "text": "Take the saw. Your hands are steadier than the chirurgeon's, after the Ford.",
+     "check": {
+      "stat": "DEX",
+      "hit": "c2_tom_ok",
+      "mixed": "c2_tom_scarred",
+      "miss": "c2_tom_bad"
+     },
+     "req": "steady"
+    }
+   ]
+  },
+  "c2_tom_hold": {
+   "id": "c2_tom_hold",
+   "title": "A King Holds a Boy",
+   "text": "It takes twelve minutes. You do not look away. Tom screams once, and then does not, and then looks at you with a child's complete trust.\n\n\"Is it done?\"\n\n\"It is done, Tom.\"\n\nHe lives. Maud will not say thank you; she simply puts her forehead on your sleeve and shakes. You will carry that sleeve for a long time.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Leave the infirmary.",
+     "goto": "c2_town"
+    }
+   ],
+   "on_enter": [
+    "set:tom_done",
+    "set:tom_saved",
+    "add:xp:1",
+    "add:hp:-1"
+   ]
+  },
+  "c2_tom_outside": {
+   "id": "c2_tom_outside",
+   "title": "The Waiting Room",
+   "text": "Maud grips your hand through the whole of it. The boy's screams go up through the stone ceiling. Ferrand emerges at last, apron red, and nods.\n\n\"He will live, sire. He will not walk the way he did.\"",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Leave the infirmary.",
+     "goto": "c2_town"
+    }
+   ],
+   "on_enter": [
+    "set:tom_done",
+    "set:tom_saved"
+   ]
+  },
+  "c2_tom_ok": {
+   "id": "c2_tom_ok",
+   "title": "Steady Hands",
+   "text": "The fen-reed in your veins does what it was grown to do. The saw does not hesitate. Ferrand says nothing at all, but when you return the saw he looks at you the way a craftsman looks at a peer.\n\nTom lives, and the leg is clean.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Leave the infirmary.",
+     "goto": "c2_town"
+    }
+   ],
+   "on_enter": [
+    "set:tom_done",
+    "set:tom_saved",
+    "add:xp:1"
+   ]
+  },
+  "c2_tom_scarred": {
+   "id": "c2_tom_scarred",
+   "title": "A Hard Cut",
+   "text": "Your hand wavers once, but Ferrand is there to correct it. It is done, and it is ugly, and Tom will live.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Leave the infirmary.",
+     "goto": "c2_town"
+    }
+   ],
+   "on_enter": [
+    "set:tom_done",
+    "set:tom_saved"
+   ]
+  },
+  "c2_tom_bad": {
+   "id": "c2_tom_bad",
+   "title": "The Saw Slips",
+   "text": "The cut is wrong. Ferrand takes the saw from you without a word and finishes it, but the boy has lost blood he couldn't spare.\n\nBy morning he is alive, barely, and grey. Maud does not look at you.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Leave the infirmary.",
+     "goto": "c2_town"
+    }
+   ],
+   "on_enter": [
+    "set:tom_done",
+    "add:hp:-1"
+   ]
+  },
+  "c2_bael": {
+   "id": "c2_bael",
+   "title": "The Guild Master",
+   "text": "Corvin Bael owns Aldermont's grain: eight great stone granaries and the chain of river-barges that feed them. He is round, shrewd, and visibly counting what a king in flight might cost him.\n\nHe hands you a ring of iron keys.\n\n\"I give you the keys because the alternative is that the dead take them. But I want an answer, sire. Four hundred refugees, six hundred townsfolk. Winter. My granaries last thirty days. On the thirty-second day — *where do we eat?*\"",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "\"Carp. Stew-ponds, a fish for every mouth. And mushroom-caves in the dry cellars.\"",
+     "goto": "c2_bael_carp",
+     "fx": [
+      "set:carp_plan"
+     ]
+    },
+    {
+     "text": "\"We leave before day thirty. We take the grain, the barges and the walls with us.\"",
+     "goto": "c2_bael_evac",
+     "fx": [
+      "set:evac_plan"
+     ]
+    },
+    {
+     "text": "\"I will make the dwarves open their own larders to you.\" (A promise.)",
+     "check": {
+      "stat": "CHA",
+      "hit": "c2_bael_dwarves",
+      "mixed": "c2_bael_evac",
+      "miss": "c2_bael_doubt"
+     }
+    }
+   ]
+  },
+  "c2_bael_carp": {
+   "id": "c2_bael_carp",
+   "title": "The Stew-Pond Plan",
+   "text": "Bael's eyebrows climb. Lady Isobel, listening from the door, says dryly, \"That might actually work. I resent it.\"\n\nThe old moat is stocked by dawn.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Back to the Hall.",
+     "goto": "c2_town",
+     "fx": [
+      "set:bael_keys",
+      "add:xp:1"
+     ]
+    }
+   ]
+  },
+  "c2_bael_evac": {
+   "id": "c2_bael_evac",
+   "title": "Moving the Town",
+   "text": "It is a mad scheme. It might be the only sane one. Bael writes it in his ledger with a face like a man signing his own death warrant.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Back to the Hall.",
+     "goto": "c2_town",
+     "fx": [
+      "set:bael_keys"
+     ]
+    }
+   ]
+  },
+  "c2_bael_dwarves": {
+   "id": "c2_bael_dwarves",
+   "title": "A Promise of the Deep",
+   "text": "Bael blinks. \"The Deepholt? Nobody has seen a dwarf in a hundred years.\"\n\n\"Then I will be the first.\"\n\nHe laughs, and then does not. \"Then I'll tell the barge-men to load for the north.\"",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Back to the Hall.",
+     "goto": "c2_town",
+     "fx": [
+      "set:bael_keys",
+      "set:evac_plan",
+      "set:promised_dwarves",
+      "add:xp:1"
+     ]
+    }
+   ]
+  },
+  "c2_bael_doubt": {
+   "id": "c2_bael_doubt",
+   "title": "A Promise Unkept",
+   "text": "\"A king who promises dwarves he has never met,\" Bael murmurs. \"You must forgive me if I don't unload the barges just yet.\"\n\nHe keeps the keys. For now.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Back to the Hall.",
+     "goto": "c2_town"
+    }
+   ]
+  },
+  "c2_aldric": {
+   "id": "c2_aldric",
+   "title": "The Boy Lord",
+   "text": "Aldric, Lord of Aldermont, is fourteen and has buried his father in secret. He walks the wall every night. He does not eat much.\n\n\"Vance says I should leave with you. Lady Isobel says I should stay and die as a lord. My father said,\" his voice cracks, \"that a lord's first duty is to the people on his wall.\"\n\nHe looks at you, hoping for an answer he can stand on.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "\"A lord's first duty is to live long enough to rule. Leave when the wall tells you.\"",
+     "goto": "c2_aldric_live",
+     "fx": [
+      "set:aldric_trusts"
+     ]
+    },
+    {
+     "text": "\"Your father was right. You'll be the last off the wall. I'll see to it that it's a long, long line.\"",
+     "goto": "c2_aldric_last",
+     "fx": [
+      "set:aldric_last",
+      "add:xp:1"
+     ]
+    }
+   ]
+  },
+  "c2_aldric_live": {
+   "id": "c2_aldric_live",
+   "title": "Practical Wisdom",
+   "text": "Aldric nods slowly. It is not the answer he wanted, but it is one he can survive. \"I'll tell Vance.\"",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Back to the Hall.",
+     "goto": "c2_town"
+    }
+   ]
+  },
+  "c2_aldric_last": {
+   "id": "c2_aldric_last",
+   "title": "The Last Off the Wall",
+   "text": "Aldric straightens. For a moment you see the man he will be, if he lives. \"Then I'll hold it,\" he says. \"As long as it takes.\"\n\nYou hope you have not just killed him.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Back to the Hall.",
+     "goto": "c2_town"
+    }
+   ]
+  },
+  "c2_hub": {
+   "id": "c2_hub",
+   "title": "The Council of Aldermont",
+   "text": "Night falls over Aldermont. Lady Isobel lays out the ledger on the long table. Vance, Ferrand, Bael and young Aldric stand around it. Roland stands at your shoulder.\n\n\"The dead are three days off,\" Isobel says. \"Not a hundred miles. The wall will hold if the Red Hand can keep it. But there is a choice that has to be made tonight.\"",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Strip the town and send everything north by the river. Abandon Aldermont.",
+     "goto": "c2_strip",
+     "fx": [
+      "set:town_stripped"
+     ]
+    },
+    {
+     "text": "Hold the wall. Buy time for the evacuation to be done properly.",
+     "goto": "c2_hold"
+    }
+   ]
+  },
+  "c2_strip": {
+   "id": "c2_strip",
+   "title": "Stripping Aldermont",
+   "text": "Every barge on the Vellin is loaded by dawn. Grain, tools, iron, the bells of the lesser churches, the lead from the roofs. Bael walks the quay with his ledger and weeps quietly at the arithmetic.\n\nLady Isobel supervises the evacuation of the sick. Ferrand burns the dead. Roland, at your side, mutters that it is the most efficient looting he has ever seen, and he is not joking.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Stay until the last barge. Show them a king does not flee first.",
+     "goto": "c2_departure",
+     "fx": [
+      "add:hp:-2",
+      "add:xp:1"
+     ]
+    },
+    {
+     "text": "Leave with the first barges and trust Vance to bring the rearguard.",
+     "goto": "c2_departure"
+    }
+   ]
+  },
+  "c2_hold": {
+   "id": "c2_hold",
+   "title": "Holding the Wall",
+   "text": "The dead come at midnight, as slow as winter, and as many. They climb the bluff in a grey tide.\n\nYou stand on the wall beside Vance and Aldric and Sir Hartmann, who has been a serjeant of Aldermont's town-watch and who kneels, before the whole garrison, in the mud of the parapet, and gives you his sword.\n\n\"I will serve a king who stands where I stand.\"",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Direct the defence. Read the dead like a board.",
+     "check": {
+      "stat": "INT",
+      "hit": "c2_hold_hit",
+      "mixed": "c2_hold_mixed",
+      "miss": "c2_hold_miss"
+     }
+    }
+   ],
+   "on_enter": [
+    "court:+Hartmann",
+    "set:hartmann_knelt"
+   ]
+  },
+  "c2_hold_hit": {
+   "id": "c2_hold_hit",
+   "title": "The Wall Holds",
+   "text": "Fire, pitch, and a single well-placed ballista bolt through the leading file break the wave before it finds the walls. By dawn, the slope is ash and the town is breathing.\n\nThe Red Hand cheers you by name.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Prepare the departure.",
+     "goto": "c2_departure"
+    }
+   ],
+   "on_enter": [
+    "add:xp:1",
+    "add:gambit:1"
+   ]
+  },
+  "c2_hold_mixed": {
+   "id": "c2_hold_mixed",
+   "title": "A Costly Night",
+   "text": "The wall holds, but not before a section of the east parapet gives way. Four brothers of the Red Hand fall, and two of the dead get into the grain-lofts before Vance personally burns them out.\n\nYou have won. It has cost.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Prepare the departure.",
+     "goto": "c2_departure"
+    }
+   ],
+   "on_enter": [
+    "add:hp:-2"
+   ]
+  },
+  "c2_hold_miss": {
+   "id": "c2_hold_miss",
+   "title": "The Wall Breaks",
+   "text": "The east parapet falls inward. You are on the wall when it happens. Hartmann drags you out of the rubble by the collar, bleeding, shouting something you cannot hear.\n\nBy dawn, a third of the garrison is dead, and the town is burning.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Flee while you can.",
+     "goto": "c2_departure"
+    }
+   ],
+   "on_enter": [
+    "add:hp:-6",
+    "set:aldermont_burned"
+   ]
+  },
+  "c2_departure": {
+   "id": "c2_departure",
+   "title": "The River North",
+   "text": "You leave Aldermont as the sun rises: a long line of barges and carts, a column of the living, and behind it, a black plume where the town burns by Vance's order, so that nothing shall rise there.\n\nIsobel stands in the stern of the lead barge and does not look back. \"I'll hate you the whole way,\" she says. It is not entirely a promise.\n\nAhead lies the Weald, the village of Ashgrove, and somewhere beyond, in the hills, the dwarves' mountain.",
+   "chapter": "Chapter II — Aldermont",
+   "choices": [
+    {
+     "text": "Take the Weald road toward Ashgrove.",
+     "goto": "c3_ashgrove"
+    }
+   ],
+   "on_enter": [
+    "court:+Hartmann",
+    "set:isobel_steward"
+   ]
+  },
+  "c3_ashgrove": {
+   "id": "c3_ashgrove",
+   "title": "Ashgrove",
+   "text": "Ashgrove is a village of thatch and apple-orchards at the Weald's edge, and it has had a bad week. A bard-voice — Alcuin's — sings the column in. The villagers hide, then peer, then, slowly, come out.\n\nAn old wise-woman beckons you to a low cottage. In the bed lies a girl, perhaps twelve, whose arm is black to the shoulder.\n\n\"Nan,\" says the grandmother. \"Four days. I've kept her breathing. But I cannot make it stop.\"",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "\"Sleep is all that holds the rot. Can you put her into a death-sleep?\"",
+     "goto": "c3_nan_sleep",
+     "req": "knows_bite"
+    },
+    {
+     "text": "\"The arm must come off — at once.\"",
+     "goto": "c3_nan_arm"
+    },
+    {
+     "text": "Offer the grandmother a place in the column. Bring Nan along, sleeping or not.",
+     "goto": "c3_nan_carry"
+    }
+   ]
+  },
+  "c3_nan_sleep": {
+   "id": "c3_nan_sleep",
+   "title": "A Death-Mimicking Sleep",
+   "text": "The wise-woman pales, then nods. \"Poppy. Henbane. A pinch of deathherb. It will slow her heart to a whisper. She will look dead, and she will not die. Not for a long time.\"\n\nIt is a gamble, and the only one on the table. The old woman measures out the draught with hands that have done this before.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Take Nan with the column.",
+     "goto": "c3_weald"
+    }
+   ],
+   "on_enter": [
+    "set:nan_sleeping",
+    "add:xp:1"
+   ]
+  },
+  "c3_nan_arm": {
+   "id": "c3_nan_arm",
+   "title": "Too Late",
+   "text": "Ferrand shakes his head even before the wise-woman does. \"Four days, sire. It's in the blood.\"\n\nNan dies that night, quietly. Her grandmother refuses to let you burn her until the sun has risen. When you do, the old woman stands very straight and says nothing at all.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Move on, heavier than before.",
+     "goto": "c3_weald"
+    }
+   ],
+   "on_enter": [
+    "set:nan_dead"
+   ]
+  },
+  "c3_nan_carry": {
+   "id": "c3_nan_carry",
+   "title": "A Cart for the Girl",
+   "text": "You lay Nan in the back of a wain with the old woman beside her. No one speaks. There is nothing else to try.\n\nThe old woman will not look at you, and does not need to. She will keep her granddaughter alive by will alone, as long as she can.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Move on.",
+     "goto": "c3_weald"
+    }
+   ],
+   "on_enter": [
+    "set:nan_cart"
+   ]
+  },
+  "c3_weald": {
+   "id": "c3_weald",
+   "title": "The Weald Road",
+   "text": "The Weald is ancient oak and old hunting lanes. The column strings out along the track, a mile long and as quiet as four hundred frightened people can be.\n\nRumour says dwarven path-wardens still watch the hill roads north. Rumour says the Skull's bearer went that way. The road forks: a lane through the deep wood, a track along the ridge, and an old cart-road through a ruined hamlet.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Take the deep wood.",
+     "random": [
+      "c3_dng_patrol",
+      "c3_dng_wolves",
+      "c3_dng_hamlet"
+     ]
+    },
+    {
+     "text": "Take the ridge.",
+     "random": [
+      "c3_dng_patrol",
+      "c3_dng_hamlet",
+      "c3_dng_rest"
+     ]
+    },
+    {
+     "text": "Take the ruined hamlet road.",
+     "goto": "c3_dng_hamlet"
+    }
+   ]
+  },
+  "c3_dng_patrol": {
+   "id": "c3_dng_patrol",
+   "title": "Grey Riders",
+   "text": "Three riders in grey cloaks, on horses with the wrong eyes. They do not speak. They are not alive, and they are looking for something very particular.\n\nThey are looking for the box.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Ambush them from the trees with the Court.",
+     "goto": "c3_patrol_fight"
+    },
+    {
+     "text": "Hide the column. Let them pass.",
+     "check": {
+      "stat": "INT",
+      "hit": "c3_patrol_hit",
+      "mixed": "c3_patrol_mixed",
+      "miss": "c3_patrol_miss"
+     }
+    }
+   ]
+  },
+  "c3_patrol_fight": {
+   "id": "c3_patrol_fight",
+   "title": "Ambush",
+   "text": "Roland, Hartmann and the others burst from cover. It is brief and ugly. Grey cloaks fall; the horses scream; and in the end one rider pins a knight, and Roland takes its head clean off.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Go on toward the hills.",
+     "goto": "c3_hills"
+    }
+   ],
+   "on_enter": [
+    "add:hp:-3",
+    "add:xp:1"
+   ]
+  },
+  "c3_patrol_hit": {
+   "id": "c3_patrol_hit",
+   "title": "A Silent Column",
+   "text": "You pass four hundred people in the shadow of the beeches without a single cough. The riders ride by, fifty feet away, and the horses do not even turn their heads.\n\nIt is the best order you have ever given.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Go on toward the hills.",
+     "goto": "c3_hills"
+    }
+   ],
+   "on_enter": [
+    "add:xp:1",
+    "add:gambit:1"
+   ]
+  },
+  "c3_patrol_mixed": {
+   "id": "c3_patrol_mixed",
+   "title": "A Near Thing",
+   "text": "They pass — but one child sneezes. A rider halts, head turning. Alcuin covers the noise with a loud, off-key lay about a drunk friar.\n\nIt works. Barely.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Go on toward the hills.",
+     "goto": "c3_hills"
+    }
+   ]
+  },
+  "c3_patrol_miss": {
+   "id": "c3_patrol_miss",
+   "title": "Spotted",
+   "text": "The riders wheel. The column scatters. Before the Court can form, they are on the baggage — and two are dead before Roland drives them off.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Gather the survivors and go on.",
+     "goto": "c3_hills"
+    }
+   ],
+   "on_enter": [
+    "add:hp:-3",
+    "add:coin:-20"
+   ]
+  },
+  "c3_dng_wolves": {
+   "id": "c3_dng_wolves",
+   "title": "Wolves",
+   "text": "They are not undead wolves. They are only hungry ones, driven out of the hills by something worse. A dozen of them, thin as sticks, circling the cart-line.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Throw rations to them. Feed what you can.",
+     "goto": "c3_wolves_fed",
+     "fx": [
+      "add:coin:-10"
+     ]
+    },
+    {
+     "text": "Draw steel. Kill them quickly.",
+     "goto": "c3_wolves_fight",
+     "fx": [
+      "add:hp:-2"
+     ]
+    }
+   ]
+  },
+  "c3_wolves_fed": {
+   "id": "c3_wolves_fed",
+   "title": "Mercy",
+   "text": "Wolves are simple creatures. They eat, they leave, and in the morning there are tracks all around the camp that are not a threat but a courtesy.\n\nHunger recedes along the hills.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Go on toward the hills.",
+     "goto": "c3_hills"
+    }
+   ]
+  },
+  "c3_wolves_fight": {
+   "id": "c3_wolves_fight",
+   "title": "Steel and Teeth",
+   "text": "Three wolves die. A fourth takes a bite out of your calf before Aymer's blade finds it. The pack scatters.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Go on toward the hills.",
+     "goto": "c3_hills"
+    }
+   ]
+  },
+  "c3_dng_hamlet": {
+   "id": "c3_dng_hamlet",
+   "title": "The Silent Hamlet",
+   "text": "Eleven cottages. A well. Not a single living soul, and not a single corpse. The doors are open. The hearths are cold.\n\nOn the green, someone has laid a long line of folded clothes, one set for every villager.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Search the cottages for supplies.",
+     "goto": "c3_hamlet_search"
+    },
+    {
+     "text": "Burn the hamlet. Whatever lives here must not follow.",
+     "goto": "c3_hamlet_burn"
+    },
+    {
+     "text": "Pass through in silence and move on.",
+     "goto": "c3_hills"
+    }
+   ]
+  },
+  "c3_hamlet_search": {
+   "id": "c3_hamlet_search",
+   "title": "What the Hamlet Kept",
+   "text": "Under the floorboards of the smith's cottage you find a cache: dried meat, a wineskin, a scatter of old coin. Someone prepared for a long siege and then — walked out. Calmly. In their sleep, maybe.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Take it and go.",
+     "goto": "c3_hills"
+    }
+   ],
+   "on_enter": [
+    "add:coin:40",
+    "add:hp:2",
+    "set:hamlet_unease"
+   ]
+  },
+  "c3_hamlet_burn": {
+   "id": "c3_hamlet_burn",
+   "title": "Ashes",
+   "text": "You burn it all, and watch the smoke climb. It feels like a dedication, or an apology.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Go on.",
+     "goto": "c3_hills"
+    }
+   ],
+   "on_enter": [
+    "add:xp:1"
+   ]
+  },
+  "c3_dng_rest": {
+   "id": "c3_dng_rest",
+   "title": "A Quiet Night",
+   "text": "No dead. No wolves. Just the stars through the leaves and the weight of the Skull's absence. You sleep, which you didn't think you could.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Go on toward the hills.",
+     "goto": "c3_hills"
+    }
+   ],
+   "on_enter": [
+    "add:hp:4"
+   ]
+  },
+  "c3_hills": {
+   "id": "c3_hills",
+   "title": "The Hill Road",
+   "text": "At the end of the Weald the land climbs. Pines. Scree. A cold wind with iron in it.\n\nOn a boulder above the trail, a small, hawk-eyed figure in a leather jerkin lifts a hand, and a crossbow does not quite lower.\n\n\"Dwarf,\" she says, unnecessarily. \"Hetta, path-warden of the Deepholt. You're far from your throne, king.\"",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "\"I'm looking for a priest with a box.\"",
+     "goto": "c3_hetta_priest",
+     "req": "skull_in_hills"
+    },
+    {
+     "text": "\"I'm looking for the Deepholt. I need walls.\"",
+     "goto": "c3_hetta_walls"
+    }
+   ]
+  },
+  "c3_hetta_priest": {
+   "id": "c3_hetta_priest",
+   "title": "A Trail of Chalk",
+   "text": "\"A priest with a box? Aye.\" Hetta jerks a thumb. \"My lads picked up a squire two days ago, half-dead, half-mad, asking for a king. Chalk marks on the rocks all the way back to a shepherd's hut.\"\n\nShe leads you there at a run.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Follow Hetta.",
+     "goto": "c3_find_anselm"
+    }
+   ]
+  },
+  "c3_hetta_walls": {
+   "id": "c3_hetta_walls",
+   "title": "The Warden's Terms",
+   "text": "Hetta studies the column. \"Walls we have. Food we have, for a while. Trust takes longer. My lord Durgan will want to see the thing you carry before he lets a thousand strangers through his gate.\"\n\nShe doesn't say \"the Skull.\" But she knows.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "\"First, I must find the priest who carries it.\"",
+     "goto": "c3_find_anselm",
+     "req": "skull_in_hills"
+    },
+    {
+     "text": "\"The Skull is with me.\"",
+     "goto": "c3_skull_ambush",
+     "req": "skull_kept"
+    }
+   ]
+  },
+  "c3_find_anselm": {
+   "id": "c3_find_anselm",
+   "title": "The Shepherd's Hut",
+   "text": "The hut is a ruin of stone and turf. Anselm is sitting against the wall, grey with exhaustion, the box across his knees. Wat sits next to him, whittling. Beside them, bandaged, sits whoever you sent: Sir Bors or Sir Aymer.\n\nAnselm looks up. \"I have not slept since the Ford,\" he says with something like pride. \"But I have not put it down.\"",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Embrace him and take the news.",
+     "goto": "c3_anselm_news",
+     "req": "sent_bors"
+    },
+    {
+     "text": "Embrace him and take the news.",
+     "goto": "c3_anselm_news_aymer",
+     "req": "sent_aymer"
+    }
+   ],
+   "on_enter": [
+    "court:+Anselm",
+    "court:+Wat"
+   ]
+  },
+  "c3_anselm_news": {
+   "id": "c3_anselm_news",
+   "title": "Bors Is Taken",
+   "text": "Sir Bors is not here.\n\n\"Grey riders,\" Anselm says. \"Five nights ago. They came for the box. Sir Bors rode out to draw them off — we saw him fall from the horse. We did not see him rise.\"\n\nWat's knife stops moving. \"He was taken, sire. Not killed. They *took* him.\"\n\nAn open wound that cannot be treated: your knight, a prisoner of the lich.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Gather yourselves. The column is two days' march from the dwarf-gate.",
+     "goto": "c4_deepholt_road"
+    }
+   ],
+   "on_enter": [
+    "set:bors_taken",
+    "court:-Bors",
+    "set:skull_recovered"
+   ]
+  },
+  "c3_anselm_news_aymer": {
+   "id": "c3_anselm_news_aymer",
+   "title": "Aymer Held",
+   "text": "Aymer sits against the wall with a rag around his ribs and a grim half-smile. \"Five riders, sire. I took three. Anselm took the fourth with a candlestick.\"\n\nAnselm blushes. \"It was a very heavy candlestick.\"\n\nYou laugh for the first time in a month.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Gather yourselves. The column is two days' march from the dwarf-gate.",
+     "goto": "c4_deepholt_road"
+    }
+   ],
+   "on_enter": [
+    "court:+Aymer",
+    "set:skull_recovered",
+    "add:xp:1"
+   ]
+  },
+  "c3_skull_ambush": {
+   "id": "c3_skull_ambush",
+   "title": "Grey Riders, Again",
+   "text": "That night they come for the box: six riders, silent, very fast. Bors sees them first and shouts the alarm.\n\n\"Anselm, the Skull! Give me the decoy!\"\n\nHe has had a wooden box made, an empty twin. He seizes it, mounts, and gallops hard into the dark, with six riders following.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Let him go. It is the only way.",
+     "goto": "c3_bors_gone"
+    },
+    {
+     "text": "Charge after him with Roland and Hartmann.",
+     "goto": "c3_bors_charge"
+    }
+   ]
+  },
+  "c3_bors_gone": {
+   "id": "c3_bors_gone",
+   "title": "A Brave Knight",
+   "text": "You hear the hoofbeats fade. Then, much later, a single scream, cut off.\n\nAt dawn Hetta and her wardens find nothing but churned earth and a single broken stirrup.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Press on toward the dwarf-gate.",
+     "goto": "c4_deepholt_road"
+    }
+   ],
+   "on_enter": [
+    "set:bors_taken",
+    "court:-Bors",
+    "set:skull_recovered"
+   ]
+  },
+  "c3_bors_charge": {
+   "id": "c3_bors_charge",
+   "title": "The Chase",
+   "text": "You do not catch him. But you break two of the riders on the stones of a dry stream, and one of them speaks before it falls apart.\n\n\"The Master takes what is brought to him. The Master is patient.\"\n\nBors is gone. But you know where he went.",
+   "chapter": "Chapter III — The Weald",
+   "choices": [
+    {
+     "text": "Press on toward the dwarf-gate.",
+     "goto": "c4_deepholt_road"
+    }
+   ],
+   "on_enter": [
+    "set:bors_taken",
+    "court:-Bors",
+    "set:skull_recovered",
+    "add:hp:-3",
+    "add:xp:1"
+   ]
+  },
+  "c4_deepholt_road": {
+   "id": "c4_deepholt_road",
+   "title": "The Road Up",
+   "text": "The land climbs into raw stone. Cold streams. Ancient steps hewn into the mountain, wide as a street and worn smooth by a thousand years of dwarvish boots. At the head of the stair, a gate of grey stone the height of a cathedral, half-closed.\n\nHetta whistles. A horn answers from inside. Slowly, the gate opens.\n\nThe Deepholt: the last great hall of the dwarves.",
+   "chapter": "Chapter IV — The Deepholt",
+   "choices": [
+    {
+     "text": "Enter.",
+     "goto": "c4_gate"
+    }
+   ]
+  },
+  "c4_gate": {
+   "id": "c4_gate",
+   "title": "Durgan, Stone-Warden",
+   "text": "The first dwarf you see is old even by dwarf measure — two hundred years, perhaps more — with a beard in nine braids and a hammer as long as a halberd. He stands beside a throne he does not sit on.\n\n\"Durgan, Stone-Warden of the Deepholt. The last of it, near enough.\" He looks at the column, and at you. \"You are the exiled king. I see why you fled. I do not see how you lived.\"\n\nBehind him the hall is half-empty. A few hundred dwarves. A great many empty benches.",
+   "chapter": "Chapter IV — The Deepholt",
+   "choices": [
+    {
+     "text": "\"I'm told the dead came up from below your halls.\"",
+     "goto": "c4_deep_warning"
+    },
+    {
+     "text": "\"I need walls. In exchange, I'll offer you something: the oath of a king.\"",
+     "goto": "c4_oath"
+    },
+    {
+     "text": "Show him the Skull.",
+     "goto": "c4_skull_show",
+     "req": "skull_recovered"
+    }
+   ]
+  },
+  "c4_deep_warning": {
+   "id": "c4_deep_warning",
+   "title": "What the Dwarves Woke",
+   "text": "Durgan is silent for a long time.\n\n\"My forefathers dug too deep,\" he says at last. \"Six levels below the Great Hall we found something that was not stone. We sealed it. We said we would never speak of it. And then, one winter, the dead came up through the floor.\"\n\nHe raps the flagstone with his hammer, once. It rings hollow.\n\n\"The lich is a hand, king. Not the head.\"",
+   "chapter": "Chapter IV — The Deepholt",
+   "choices": [
+    {
+     "text": "\"Then we strike at the head.\"",
+     "goto": "c4_oath",
+     "fx": [
+      "set:knows_deep"
+     ]
+    },
+    {
+     "text": "\"Then we leave this place before it wakes again.\"",
+     "goto": "c4_oath",
+     "fx": [
+      "set:knows_deep"
+     ]
+    }
+   ]
+  },
+  "c4_skull_show": {
+   "id": "c4_skull_show",
+   "title": "The Skull in the Hall",
+   "text": "Anselm sets the box on the long stone table. Dwarves crowd round in silence. When the lid lifts, the whole hall holds its breath.\n\nNothing happens. And then everything stops: the torches steady, the drafts die, and from far below, in the stone, you feel a thing you had not noticed — a faint, constant, grinding hum — *cease*.\n\nDurgan sits down on the steps of his throne, finally. \"That,\" he says. \"That is what I have been listening to for thirty years.\"",
+   "chapter": "Chapter IV — The Deepholt",
+   "choices": [
+    {
+     "text": "\"Then we can end it.\"",
+     "goto": "c4_oath"
+    }
+   ],
+   "on_enter": [
+    "set:skull_shown_durgan",
+    "add:xp:1"
+   ]
+  },
+  "c4_oath": {
+   "id": "c4_oath",
+   "title": "The Oath of Stone and Crown",
+   "text": "Durgan lays his hammer across his knees.\n\n\"I'll tell you my price, king. Not gold. I want a name, so my grandchildren remember who I served. I want my folk, the ones who remain, kept alive. And I want the deep ended.\"\n\nYou have a sword at your hip, a crown in your pack, and a title you don't hold any more.",
+   "chapter": "Chapter IV — The Deepholt",
+   "choices": [
+    {
+     "text": "Knight him. \"Rise, Durgan of the Deepholt — Warden of the Realm.\"",
+     "goto": "c4_knight",
+     "fx": [
+      "set:durgan_knight"
+     ]
+    },
+    {
+     "text": "Offer it as an alliance of equals. He will respect it more.",
+     "check": {
+      "stat": "CHA",
+      "hit": "c4_equal_hit",
+      "mixed": "c4_knight",
+      "miss": "c4_equal_miss"
+     }
+    }
+   ]
+  },
+  "c4_knight": {
+   "id": "c4_knight",
+   "title": "Nobledwarfship",
+   "text": "Durgan has never been knighted in two hundred years. He is, you discover, delighted by the idea, and horrified at being delighted. He kneels with a grunt like a collapsing wall.\n\n\"I'll be damned,\" he says as you touch his shoulder. \"A dwarf with a title.\"\n\nThe hall roars. For the first time since the Ford, someone is cheering you for a reason.",
+   "chapter": "Chapter IV — The Deepholt",
+   "choices": [
+    {
+     "text": "Meet the dwarf-folk. Learn what they can do.",
+     "goto": "c4_brom"
+    }
+   ],
+   "on_enter": [
+    "set:durgan_sworn",
+    "add:xp:1",
+    "add:coin:-20"
+   ]
+  },
+  "c4_equal_hit": {
+   "id": "c4_equal_hit",
+   "title": "A Handshake of Stone",
+   "text": "He takes your hand in a grip that could split rock. \"Equal, then. Until you prove otherwise.\"\n\nIt is the finest alliance you have ever made. He will keep it longer than any oath.",
+   "chapter": "Chapter IV — The Deepholt",
+   "choices": [
+    {
+     "text": "Meet the dwarf-folk.",
+     "goto": "c4_brom"
+    }
+   ],
+   "on_enter": [
+    "set:durgan_sworn",
+    "set:durgan_equal",
+    "add:xp:1",
+    "add:gambit:1"
+   ]
+  },
+  "c4_equal_miss": {
+   "id": "c4_equal_miss",
+   "title": "A Cold Look",
+   "text": "\"You offer me an alliance because you cannot afford to knight me,\" Durgan observes. \"That is a lie, but a polite one.\"\n\nHe agrees anyway. It will take work to earn his warmth.",
+   "chapter": "Chapter IV — The Deepholt",
+   "choices": [
+    {
+     "text": "Meet the dwarf-folk.",
+     "goto": "c4_brom"
+    }
+   ],
+   "on_enter": [
+    "set:durgan_sworn"
+   ]
+  },
+  "c4_brom": {
+   "id": "c4_brom",
+   "title": "Brom's Draught",
+   "text": "Brom is a squat brewer with a belly like a keg and the soft hands of a man who has been wrong about many things and kind about all of them.\n\n\"Infection, aye?\" He taps a stoppered clay jar. \"Deep-cap draught. Mushroom from the lower caves. Slows the heart and breath to a trickle. Holds the rot but doesn't heal it. One dose fits any body. It needs cold, and a drop each dawn.\"\n\nHe looks at you. \"I assume you have somebody.\"",
+   "chapter": "Chapter IV — The Deepholt",
+   "choices": [
+    {
+     "text": "\"Seven of the bitten are in the column, kept alive only by luck.\"",
+     "goto": "c4_brom_save",
+     "req": "!nan_dead"
+    },
+    {
+     "text": "\"Nan is sleeping. I want her dose.\"",
+     "goto": "c4_brom_nan",
+     "req": "nan_sleeping"
+    },
+    {
+     "text": "\"The girl in the cart — Nan — I want her dose.\"",
+     "goto": "c4_brom_nan",
+     "req": "nan_cart"
+    },
+    {
+     "text": "\"Not now. What else do you have?\"",
+     "goto": "c4_theodore"
+    }
+   ]
+  },
+  "c4_brom_save": {
+   "id": "c4_brom_save",
+   "title": "Seven Lives",
+   "text": "Brom takes the jar to the infirmary himself. By dawn, seven bitten villagers sleep in cold stone cots, their veins fading from black to dull grey.\n\n\"It won't cure them,\" he warns. \"But it will give you time to find someone who can.\"",
+   "chapter": "Chapter IV — The Deepholt",
+   "choices": [
+    {
+     "text": "Thank him and move on.",
+     "goto": "c4_theodore"
+    }
+   ],
+   "on_enter": [
+    "set:infected_held",
+    "set:brom_ally",
+    "add:xp:1"
+   ]
+  },
+  "c4_brom_nan": {
+   "id": "c4_brom_nan",
+   "title": "A Child's Dose",
+   "text": "He mixes a thimble. \"Small body, small dose.\" The girl's chest rises, once, twice, slow as a clock in a cold room.\n\n\"She'll keep. Find me a cure and I'll wake her.\"",
+   "chapter": "Chapter IV — The Deepholt",
+   "choices": [
+    {
+     "text": "Thank him and move on.",
+     "goto": "c4_theodore"
+    }
+   ],
+   "on_enter": [
+    "set:nan_held",
+    "set:brom_ally",
+    "add:xp:1"
+   ]
+  },
+  "c4_theodore": {
+   "id": "c4_theodore",
+   "title": "The Hall of the Fallen",
+   "text": "Durgan leads you down into the First Hall — a vault of pillars and vast silence. Along its walls stand the dead of the Deepholt's last war: dwarves and men in rows, motionless, eyes open, bound by the lich's will.\n\nAnd in the centre, a human knight in your kingdom's old colours. He is perfectly still. Tabard torn, helm gone, face pale as candle-wax.\n\n\"Sir Theodore,\" Roland whispers. \"He fell at the Ford.\"",
+   "chapter": "Chapter IV — The Deepholt",
+   "choices": [
+    {
+     "text": "Bring the Skull forward. Let Anselm raise it.",
+     "goto": "c4_theodore_skull",
+     "req": "skull_recovered"
+    },
+    {
+     "text": "Leave them in peace. The dead should not be disturbed.",
+     "goto": "c4_leave"
+    }
+   ]
+  },
+  "c4_theodore_skull": {
+   "id": "c4_theodore_skull",
+   "title": "The Undying Knight",
+   "text": "Anselm lifts the Skull. The dead of the First Hall do not move — but the knight in the centre blinks. Once. Twice. A breath, drawn in like a drowning man's.\n\n\"My king,\" says Sir Theodore. \"I do not know why I am not dead. But I am glad to see you.\"\n\nHe cannot be killed, you will learn; the Skull has bound him to the living world. It is a gift. It is a very dangerous one.",
+   "chapter": "Chapter IV — The Deepholt",
+   "choices": [
+    {
+     "text": "Embrace him. Another knight returns.",
+     "goto": "c4_leave"
+    }
+   ],
+   "on_enter": [
+    "court:+Theodore",
+    "set:theodore_back",
+    "add:xp:1",
+    "add:hp:-2"
+   ]
+  },
+  "c4_leave": {
+   "id": "c4_leave",
+   "title": "A Hall of Stone",
+   "text": "The Deepholt is not safe, you realise — only quiet. Below the First Hall, six sealed levels. Beneath those, a patient listening.\n\nYou cannot stay. You cannot hold this place against both the legion from above and the deep from below. Durgan agrees, grimly.\n\n\"There's a place,\" he says, \"in the hills. An abbey. Monks of Saint Gregory — your saint. They keep a bell. They say the Bell rings the dead down.\"",
+   "chapter": "Chapter IV — The Deepholt",
+   "choices": [
+    {
+     "text": "Take the column to the Abbey of Saint Gregory-in-the-Hills.",
+     "goto": "c5_abbey"
+    }
+   ],
+   "on_enter": [
+    "set:left_deepholt"
+   ]
+  },
+  "c5_abbey": {
+   "id": "c5_abbey",
+   "title": "Saint Gregory-in-the-Hills",
+   "text": "The abbey sits on a shelf of rock above the treeline: a grey chapel, a cloister, a belfry, and three hundred monks in undyed wool who have spent a decade praying for the end of the world and have, to their credit, kept very good records of its approach.\n\nThe abbot, Ambrose, is a lean man with burn-scarred hands and a laugh that arrives unexpectedly. He kneels the moment he sees the standard — not to you, you realise, but to the *saint's* arms stitched on it.\n\n\"You are late, sire,\" he says. \"But you have not come empty-handed.\"",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Present the Skull to the abbot.",
+     "goto": "c5_ambrose",
+     "req": "skull_recovered"
+    },
+    {
+     "text": "Tell him the column's need: food, shelter, the dead on the road.",
+     "goto": "c5_ambrose"
+    }
+   ]
+  },
+  "c5_ambrose": {
+   "id": "c5_ambrose",
+   "title": "Abbot Ambrose",
+   "text": "Ambrose leads you through the cloister to the library: a long vaulted room, shelves bowed with scrolls. One of them lies open, a vast pre-Fall volume in a script you do not know.\n\n\"The Concordance,\" he says. \"A record of the First Era, when the saints were men and the Enemy walked in daylight. There is a necromancer in it. A servant of the Enemy, one of seven. It calls itself a god. It sleeps below a mountain.\"\n\nHe taps the page. \"I think your dwarves woke it.\"\n\nHe looks at you. \"I will tell you the rest, sire. But not tonight. First: the Bell.\"",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Follow him to the belfry.",
+     "goto": "c5_bell"
+    }
+   ],
+   "on_enter": [
+    "set:concordance_seen"
+   ]
+  },
+  "c5_bell": {
+   "id": "c5_bell",
+   "title": "The Bell of Saint Gregory",
+   "text": "The Bell is old and green with weathering, and as large as a hay-wain. It hangs in an open belfry, its clapper wrapped in leather.\n\n\"When the great bell rings,\" Ambrose says, \"the dead lie down. It has not rung in sixty years. It rings *better* with a relic in its heart.\"\n\nHe looks pointedly at the Skull's box.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Mount the Skull inside the Bell. Let it ring the dead down.",
+     "goto": "c5_bell_arm",
+     "req": "skull_recovered"
+    },
+    {
+     "text": "Keep the Skull on your person. The Bell can ring without it.",
+     "goto": "c5_bell_plain"
+    }
+   ]
+  },
+  "c5_bell_arm": {
+   "id": "c5_bell_arm",
+   "title": "Armed",
+   "text": "Anselm weeps as he sets the Skull into a cradle of silver wire within the bell's belly. Ambrose strikes it once, softly, with a padded hammer.\n\nThe note goes out across the valley. Somewhere distant, you hear something drop. It is a *sound of falling*, as if a legion had lain down in the night.\n\nThe Bell is armed.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Go down to the river. Hollowmill awaits.",
+     "goto": "c5_hollowmill"
+    }
+   ],
+   "on_enter": [
+    "set:bell_armed",
+    "add:xp:1"
+   ]
+  },
+  "c5_bell_plain": {
+   "id": "c5_bell_plain",
+   "title": "Unarmed",
+   "text": "The Bell rings: a good, deep note, but a plain one. It will lull the weaker dead. It will not stop an army.\n\nAmbrose does not argue. He folds his hands. \"Then we will pray it is enough.\"",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Go down to the river. Hollowmill awaits.",
+     "goto": "c5_hollowmill"
+    }
+   ]
+  },
+  "c5_hollowmill": {
+   "id": "c5_hollowmill",
+   "title": "Hollowmill Lock",
+   "text": "Down the mountain, at the join of two rivers, a stone lock-house guards the only boat-route out of the hills: Hollowmill. A cluster of mill-wheels. A moat. A single stone bridge.\n\nSir Roland takes the lock-house without a fight. Alcuin the envoy takes the miller's wife's tea.\n\n\"If the dead come,\" Roland says, \"they come across this bridge, or they don't come.\"",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Fortify the bridge and the lock. Build for a siege.",
+     "goto": "c5_fortify"
+    },
+    {
+     "text": "Send riders to the Fenmarch. The fen-folk may know something.",
+     "goto": "c5_fenmarch"
+    }
+   ]
+  },
+  "c5_fortify": {
+   "id": "c5_fortify",
+   "title": "Holding the Lock",
+   "text": "You work with Roland, Hartmann and the miller. Beams across the bridge. Barrels of pitch at the mill-race. A chain across the river. It is the kind of work you were born to.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Plant the standard. Make this ground yours.",
+     "check": {
+      "stat": "CHA",
+      "hit": "c5_fortify_hit",
+      "mixed": "c5_fortify_mixed",
+      "miss": "c5_fortify_miss"
+     }
+    }
+   ]
+  },
+  "c5_fortify_hit": {
+   "id": "c5_fortify_hit",
+   "title": "Ground Won",
+   "text": "The standard goes in. The soldiers around it stand straighter. For a moment Hollowmill is not a mill-lock; it is a place with a king. The people feel it. They begin to build faster.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Meet with the fen-folk.",
+     "goto": "c5_fenmarch"
+    }
+   ],
+   "on_enter": [
+    "set:hollowmill_held",
+    "add:xp:1",
+    "add:gambit:1"
+   ]
+  },
+  "c5_fortify_mixed": {
+   "id": "c5_fortify_mixed",
+   "title": "A Good Wall",
+   "text": "The bridge is blocked, the mill-race trapped. Not perfect, but enough.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Meet with the fen-folk.",
+     "goto": "c5_fenmarch"
+    }
+   ],
+   "on_enter": [
+    "set:hollowmill_held"
+   ]
+  },
+  "c5_fortify_miss": {
+   "id": "c5_fortify_miss",
+   "title": "A Crack in the Plan",
+   "text": "The pitch-barrels leak. The chain is the wrong length. A day of work undone, and the miller's apprentice drowned in the mill-race.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Meet with the fen-folk.",
+     "goto": "c5_fenmarch"
+    }
+   ],
+   "on_enter": [
+    "add:hp:-2"
+   ]
+  },
+  "c5_fenmarch": {
+   "id": "c5_fenmarch",
+   "title": "Fenmarch",
+   "text": "Beyond the lock the river spreads into a flat, silver marsh: the Fenmarch. Reed-towns on stilts. Boats like leaves. The fen-folk are small, brown, and extremely good at not being found.\n\nTheir ruler is a princess named Saoirse. She is twenty-six, has red-brown hair and green eyes like the marsh in autumn, and has already decided that she doesn't like you.\n\n\"They tell me you're a king,\" she says. \"I have a hundred reed-boats and a very small treasury. Tell me what's in it for the fen.\"",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "\"Safe harbour. A wall on the river. A place for your people when the dead come.\"",
+     "goto": "c5_saoirse_deal"
+    },
+    {
+     "text": "\"A union. My crown and yours, my Court and your boats.\"",
+     "check": {
+      "stat": "CHA",
+      "hit": "c5_saoirse_marry",
+      "mixed": "c5_saoirse_deal",
+      "miss": "c5_saoirse_cold"
+     }
+    }
+   ]
+  },
+  "c5_saoirse_deal": {
+   "id": "c5_saoirse_deal",
+   "title": "An Alliance",
+   "text": "Saoirse weighs it, her chin on her fist. \"Safe harbour I can sell to my elders. A wall on the river, perhaps. But I want it in writing.\"\n\nYou sign. She signs. Her signature is neater than yours.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Return to Hollowmill. The scouts report movement.",
+     "goto": "c5_siege"
+    }
+   ],
+   "on_enter": [
+    "set:fen_allied",
+    "add:xp:1"
+   ]
+  },
+  "c5_saoirse_marry": {
+   "id": "c5_saoirse_marry",
+   "title": "A Union",
+   "text": "The council of reed-elders confers for three hours in a language you don't speak. When they emerge, Saoirse is already smiling.\n\n\"You are not what I expected,\" she says. \"I find that I do not mind.\"\n\nYou are married by the end of the week, in a flat-bottomed boat, under a roof of woven reeds, with Roland as the only witness who can swim.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Return to Hollowmill. The scouts report movement.",
+     "goto": "c5_siege"
+    }
+   ],
+   "on_enter": [
+    "set:fen_allied",
+    "set:queen_saoirse",
+    "add:xp:2",
+    "add:gambit:1"
+   ]
+  },
+  "c5_saoirse_cold": {
+   "id": "c5_saoirse_cold",
+   "title": "Cold Courtesy",
+   "text": "\"A union? With a king whose kingdom is a column of beggars?\" She doesn't smile. \"No. But I'll sell you my boats.\"\n\nIt costs you forty coins. The boats are good.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Return to Hollowmill. The scouts report movement.",
+     "goto": "c5_siege"
+    }
+   ],
+   "on_enter": [
+    "set:fen_boats",
+    "add:coin:-40"
+   ]
+  },
+  "c5_siege": {
+   "id": "c5_siege",
+   "title": "The Host Arrives",
+   "text": "They come at dusk: first as a smudge on the horizon, then as a tide.\n\nTen thousand dead. Fifteen. Marching in ranks, as if drilled. In their midst, borne on a litter of bone, a grey-robed figure in a hood, hands clasped.\n\nThe lich Malgareth reaches the far bank and lifts his hand. The host halts. A silence falls over the river.\n\nThen comes the voice, not shouted but *placed* into every ear at once, patient as a physician:\n\n\"King Gregory. Give me the skull, and your people may walk free. I will keep my word.\"",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "\"Take it, and my people live.\" (Consider the offer.)",
+     "goto": "c5_offer"
+    },
+    {
+     "text": "Refuse. Raise the standard.",
+     "goto": "c5_refuse"
+    }
+   ]
+  },
+  "c5_offer": {
+   "id": "c5_offer",
+   "title": "The Offer of Malgareth",
+   "text": "You hold your breath. It is a good offer. It may even be true.\n\nBut Anselm, standing beside you, has gone the color of tallow. \"My lord,\" he whispers. \"If you give it up, the world ends. Not just ours. All of it.\"\n\nYou stand at the edge of the bridge with the Skull in a wooden box at your side and the lich's patient voice in your ears.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Refuse. Raise the standard.",
+     "goto": "c5_refuse",
+     "fx": [
+      "set:malgareth_offer_refused"
+     ]
+    },
+    {
+     "text": "Stall him. Ask for three days to consider.",
+     "goto": "c5_stall",
+     "fx": [
+      "set:malgareth_offer_pending"
+     ]
+    }
+   ]
+  },
+  "c5_stall": {
+   "id": "c5_stall",
+   "title": "Three Days",
+   "text": "\"Three days,\" Malgareth says, and for the first time he sounds almost amused. \"I have waited three centuries. Three days is a courtesy. You may have them.\"\n\nIt is a gift you did not earn. You intend to spend it.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Make your preparations.",
+     "goto": "c5_prep"
+    }
+   ],
+   "on_enter": [
+    "add:xp:1"
+   ]
+  },
+  "c5_refuse": {
+   "id": "c5_refuse",
+   "title": "The King's Answer",
+   "text": "\"No,\" you say.\n\nIt is not shouted. It does not need to be. Roland raises the standard behind you. Alcuin begins, unprompted, a marching song. Soldiers on the walls take up the chorus.\n\nMalgareth lowers his hand. The host surges across the water.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Make your preparations.",
+     "goto": "c5_prep"
+    }
+   ],
+   "on_enter": [
+    "add:xp:1"
+   ]
+  },
+  "c5_prep": {
+   "id": "c5_prep",
+   "title": "Three Plans",
+   "text": "The river is the only thing standing between you and fifteen thousand dead. You have whatever you've built: a bridge, a chain, a lock, a Bell on the mountain — if you armed it — and a fleet of fen-boats if you made friends.\n\nWhat do you do?",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Ring the Bell. Let the Skull call the dead down.",
+     "goto": "c5_bell_ring",
+     "req": "bell_armed"
+    },
+    {
+     "text": "Fire-rafts. Load every barge with pitch and send them down the river into the host.",
+     "goto": "c5_fire_raft"
+    },
+    {
+     "text": "Evacuate. Take everyone upriver by night.",
+     "goto": "c5_evac_first"
+    }
+   ]
+  },
+  "c5_bell_ring": {
+   "id": "c5_bell_ring",
+   "title": "The Bell Rings",
+   "text": "Ambrose strikes the Bell with both arms. The note rolls down the mountain and across the river like a thrown cloth.\n\nThe first rank of the dead sags. The second pitches forward. By the tenth rank, the whole host is going down like wheat before a scythe — tens of thousands of them, lying down on the riverbank in the grey dusk.\n\nOn the far bank Malgareth lifts his hood and, for the first time, you see him surprised.\n\nHe steps back and vanishes into the mist.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Press the advantage. Burn the fallen.",
+     "goto": "c5_victory"
+    }
+   ],
+   "on_enter": [
+    "add:xp:2",
+    "set:bell_rang"
+   ]
+  },
+  "c5_fire_raft": {
+   "id": "c5_fire_raft",
+   "title": "The Fire-Rafts",
+   "text": "Every barge on the river is tied together, soaked in pitch, loaded with straw and oil. The fen-boatmen pole them out into the current. Brom stands on the quay holding a lit torch with an expression of pure joy.\n\nThe dead do not fear fire. But they cannot cross it.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Time the release. Send them down at the exact moment the host crosses.",
+     "check": {
+      "stat": "INT",
+      "hit": "c5_raft_hit",
+      "mixed": "c5_raft_mixed",
+      "miss": "c5_raft_miss"
+     }
+    }
+   ]
+  },
+  "c5_raft_hit": {
+   "id": "c5_raft_hit",
+   "title": "The River Burns",
+   "text": "The Vellin becomes a ribbon of fire for half a mile. Ten thousand dead go into it and do not come out. A tower of black smoke climbs to the clouds.\n\nMalgareth stands on the far bank, hood back, watching it burn. He looks at you across the water and gives a small, appreciative bow.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Press the advantage.",
+     "goto": "c5_victory"
+    }
+   ],
+   "on_enter": [
+    "add:xp:2",
+    "add:gambit:1"
+   ]
+  },
+  "c5_raft_mixed": {
+   "id": "c5_raft_mixed",
+   "title": "A Breach",
+   "text": "The rafts burn half the host. The other half wades through the shallows and reaches the bridge. Roland holds it for an hour, until the Bell on the mountain — struck at last — rings the rest down.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Count the cost.",
+     "goto": "c5_victory"
+    }
+   ],
+   "on_enter": [
+    "add:xp:1",
+    "add:hp:-3"
+   ]
+  },
+  "c5_raft_miss": {
+   "id": "c5_raft_miss",
+   "title": "The Wind Turns",
+   "text": "The wind shifts. The fire-rafts drift into your own quay. The storehouse goes up. Half the grain is lost.\n\nThe host crosses unhindered.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Evacuate while there is time.",
+     "goto": "c5_evac_first"
+    }
+   ],
+   "on_enter": [
+    "add:hp:-4",
+    "add:coin:-40"
+   ]
+  },
+  "c5_victory": {
+   "id": "c5_victory",
+   "title": "The Bank at Dawn",
+   "text": "In the morning the far bank is quiet. The dead lie where they fell, and the fen-folk, who are not squeamish, begin burning them in long, patient rows.\n\nMalgareth is gone. The river runs black and the fen-folk hum as they work.\n\nThe war is not won. But the Hollowmill is yours. And on the mountain, the Bell still rings.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Gather the column. You need a home.",
+     "goto": "c6_found"
+    }
+   ],
+   "on_enter": [
+    "set:hollowmill_victory"
+   ]
+  },
+  "c5_evac_first": {
+   "id": "c5_evac_first",
+   "title": "The Night March",
+   "text": "You do not fight what you cannot beat. Under a moon the colour of tin, the column loads onto fen-boats and slips upriver in silence, four hundred people and a thousand animals, carts dismantled, lamps shuttered.\n\nBehind you the dead reach an empty bridge. A mile on, you hear the first of them fall into the river, uncomprehending.\n\nIt is not a victory. It is survival.",
+   "chapter": "Chapter V — The Bell",
+   "choices": [
+    {
+     "text": "Find a home in the hills.",
+     "goto": "c6_found"
+    }
+   ],
+   "on_enter": [
+    "set:evacuated"
+   ]
+  },
+  "c6_found": {
+   "id": "c6_found",
+   "title": "Founding",
+   "text": "The mountain above the abbey has a long shelf of rock, a spring, and a view down three valleys. It is the best place you have seen in a year, and it is nothing yet. A kingdom needs more than a standard, and you have the people to build it.\n\nDurgan paces the ground with a measuring-cord, grumbling about foundations. Isobel stands with the ledger.\n\n\"We have the labour for three works before winter,\" she says. \"Choose well.\"",
+   "chapter": "Chapter VI — Stone Upon Stone",
+   "choices": [
+    {
+     "text": "The Mill — a water-wheel on the spring, to grind grain and drive saws.",
+     "goto": "c6_found",
+     "req": "!b_mill",
+     "fx": [
+      "set:b_mill",
+      "add:built:1"
+     ]
+    },
+    {
+     "text": "The Granary — stone-vaulted, rat-proof, big enough for a winter.",
+     "goto": "c6_found",
+     "req": "!b_granary",
+     "fx": [
+      "set:b_granary",
+      "add:built:1"
+     ]
+    },
+    {
+     "text": "The Chapel — a place for Anselm and Ambrose to hold the dead's rites.",
+     "goto": "c6_found",
+     "req": "!b_chapel",
+     "fx": [
+      "set:b_chapel",
+      "add:built:1"
+     ]
+    },
+    {
+     "text": "The Wall — a curtain of dwarf-cut stone around the shelf.",
+     "goto": "c6_found",
+     "req": "!b_wall",
+     "fx": [
+      "set:b_wall",
+      "add:built:1"
+     ]
+    },
+    {
+     "text": "The Bell-Mount — a tower to carry the Bell and the Skull.",
+     "goto": "c6_found",
+     "req": "!b_bellmount",
+     "fx": [
+      "set:b_bellmount",
+      "add:built:1"
+     ]
+    },
+    {
+     "text": "The Sky-Farms — terraced fields cut into the cliff.",
+     "goto": "c6_found",
+     "req": "!b_skyfarm",
+     "fx": [
+      "set:b_skyfarm",
+      "add:built:1"
+     ]
+    }
+   ],
+   "redirect": [
+    {
+     "if": "built>=3",
+     "goto": "c6_year"
+    }
+   ]
+  },
+  "c6_year": {
+   "id": "c6_year",
+   "title": "A Year",
+   "text": "A winter passes. Then a spring. Then a harvest.\n\nThe works go up. The Wall rises, or doesn't. The grain comes in, or doesn't. Your people stop looking over their shoulders at every sound, and begin, cautiously, to look at each other.\n\nBy the next autumn there are children playing in the courtyard. By the autumn after that, a baby is born in the royal chambers: a frail, red-haired, green-eyed boy who does not cry as loud as he should.",
+   "chapter": "Chapter VI — Stone Upon Stone",
+   "choices": [
+    {
+     "text": "Hold the child. Name him.",
+     "goto": "c6_heir",
+     "req": "queen_saoirse"
+    },
+    {
+     "text": "Continue.",
+     "goto": "c6_feast",
+     "req": "!queen_saoirse"
+    }
+   ],
+   "on_enter": [
+    "add:hp:18",
+    "add:xp:1"
+   ]
+  },
+  "c6_heir": {
+   "id": "c6_heir",
+   "title": "The Heir",
+   "text": "He is light as a loaf. His breathing is a small, steady rasp. Ambrose says what he can: sun, care, patience. Ferrand says the same, more carefully.\n\nSaoirse watches you hold your son with something unreadable in her face.\n\n\"He will live,\" she says, \"because I have decided it.\"\n\nYou are not at all sure that it is up to her.",
+   "chapter": "Chapter VI — Stone Upon Stone",
+   "choices": [
+    {
+     "text": "Continue.",
+     "goto": "c6_feast"
+    }
+   ],
+   "on_enter": [
+    "set:heir_frail"
+   ]
+  },
+  "c6_feast": {
+   "id": "c6_feast",
+   "title": "The Feast of the First Harvest",
+   "text": "A great table runs the length of the courtyard. Dwarf-brewed ale, fen-smoked eel, orchard apples from Ashgrove. The Red Hand brothers sing hymns with their shirts undone. Halbrecht, who still doesn't call you Majesty, stands to toast \"the man who didn't die.\"\n\nIt is the first night in two years that no one keeps watch from the wall.\n\nAt the end of the table, Lady Isobel sits straight as a rod, glaring at Durgan, who is trying very hard not to look at her.",
+   "chapter": "Chapter VI — Stone Upon Stone",
+   "choices": [
+    {
+     "text": "Play the matchmaker. Pair the widows of the column with the bachelor dwarves.",
+     "check": {
+      "stat": "CHA",
+      "hit": "c6_match_hit",
+      "mixed": "c6_match_mixed",
+      "miss": "c6_match_miss"
+     }
+    },
+    {
+     "text": "Let them find their own way. Enjoy the night.",
+     "goto": "c6_levy",
+     "fx": [
+      "add:hp:4"
+     ]
+    }
+   ]
+  },
+  "c6_match_hit": {
+   "id": "c6_match_hit",
+   "title": "Marriages",
+   "text": "By the end of the night there are six pairs at the table, and one pair, Lady Isobel and Durgan the Stone-Warden, that has stopped pretending not to be. She marries him the next spring, in the Chapel, with a dwarven crown-of-iron in her hair.\n\nA generation of children will be born of this table: half-height, strong-willed, and, you suspect, impossible.",
+   "chapter": "Chapter VI — Stone Upon Stone",
+   "choices": [
+    {
+     "text": "Raise the levy.",
+     "goto": "c6_levy"
+    }
+   ],
+   "on_enter": [
+    "set:isobel_durgan",
+    "add:xp:1",
+    "add:gambit:1"
+   ]
+  },
+  "c6_match_mixed": {
+   "id": "c6_match_mixed",
+   "title": "A Few Matches",
+   "text": "Some pairs take. Some do not. Isobel, however, stands up from her chair and informs Durgan, in front of everyone, that if he is going to stare at her he may as well ask. He does.",
+   "chapter": "Chapter VI — Stone Upon Stone",
+   "choices": [
+    {
+     "text": "Raise the levy.",
+     "goto": "c6_levy"
+    }
+   ],
+   "on_enter": [
+    "set:isobel_durgan",
+    "add:xp:1"
+   ]
+  },
+  "c6_match_miss": {
+   "id": "c6_match_miss",
+   "title": "Awkward",
+   "text": "It is a disaster. Three widows storm off. A dwarf proposes to a goat. Isobel looks at you with a flat, tired expression that says: *this is exactly why I hate you.*",
+   "chapter": "Chapter VI — Stone Upon Stone",
+   "choices": [
+    {
+     "text": "Raise the levy.",
+     "goto": "c6_levy"
+    }
+   ]
+  },
+  "c6_levy": {
+   "id": "c6_levy",
+   "title": "The Levy",
+   "text": "In the spring the scouts return with the same report: the dead are massing again in the lowlands. Malgareth is not a lich who forgets.\n\nAldric, now sixteen, is the obvious choice for Captain of the Levy. He is stiff with pride and terrified in the right ways.\n\n\"How many men do I need?\"",
+   "chapter": "Chapter VI — Stone Upon Stone",
+   "choices": [
+    {
+     "text": "\"All of them. Every adult with legs.\"",
+     "goto": "c6_levy_all",
+     "fx": [
+      "set:levy_big"
+     ]
+    },
+    {
+     "text": "\"Eight hundred. The best. The rest hold the wall.\"",
+     "goto": "c6_levy_elite",
+     "fx": [
+      "set:levy_elite"
+     ]
+    }
+   ]
+  },
+  "c6_levy_all": {
+   "id": "c6_levy_all",
+   "title": "Everyone",
+   "text": "Aldric nods, pale. \"Everyone, then.\"\n\nBy midsummer there are two thousand people under arms and no one in the fields. It is the kind of army that wins by exhausting itself on the enemy.",
+   "chapter": "Chapter VI — Stone Upon Stone",
+   "choices": [
+    {
+     "text": "Send Sam to the fen for reinforcements.",
+     "goto": "c6_sam"
+    }
+   ]
+  },
+  "c6_levy_elite": {
+   "id": "c6_levy_elite",
+   "title": "Eight Hundred",
+   "text": "Eight hundred men trained by dwarf and Red Hand, led by a sixteen-year-old with his father's sword. They are not a horde. They are a blade.",
+   "chapter": "Chapter VI — Stone Upon Stone",
+   "choices": [
+    {
+     "text": "Send Sam to the fen for reinforcements.",
+     "goto": "c6_sam"
+    }
+   ]
+  },
+  "c6_sam": {
+   "id": "c6_sam",
+   "title": "The Squire's Errand",
+   "text": "Sam is twenty now, no longer a boy, and still serves as your squire out of pure stubbornness. You hand him a letter, a seal, and a fen-boat.\n\n\"Go to the Fenmarch. Bring me the warriors the queen has promised.\"\n\nHe grins. \"And if she's in a mood?\"\n\n\"Bring your charm.\"",
+   "chapter": "Chapter VI — Stone Upon Stone",
+   "choices": [
+    {
+     "text": "A scout rides in. The Abbot wants to see you. At once.",
+     "goto": "c7_library"
+    }
+   ],
+   "on_enter": [
+    "set:sam_to_fen"
+   ]
+  },
+  "c7_library": {
+   "id": "c7_library",
+   "title": "The Concordance",
+   "text": "Ambrose has not slept. He has the Concordance open across three tables, with notes in his own hand weighted down by a candlestick.\n\n\"I will tell you what I know,\" he says, \"and then you will not like it.\"\n\nThe thing beneath the Deepholt is a necromancer of the First Era: a servant of the Enemy, one of seven, who calls itself a god and hoards what it takes. Everything the dwarves lost, it kept — gold, banners, bones. It has been feeding on the drowned dead of six sealed levels for a thousand years. Malgareth is its steward, not its master.\n\n\"Kill the god,\" says Ambrose, \"and the horde above falls with it. That is what the Concordance says. I do not know if it is true.\"\n\nHe lowers his voice. \"There is a name. I will write it, and seal it, and give it to you at the door. Not before.\"\n\n{{ferrand_dead|In the crypt below the chapel, Brother Ferrand's body lies on its slab, where he died of the bite last winter. Anselm says the dead man's left eye has begun to open when the Skull passes. No one has found the courage to say what that means.}}",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Gather the Court. Decide how to go down.",
+     "goto": "c7_decide"
+    }
+   ],
+   "on_enter": [
+    "set:ferrand_dead",
+    "set:name_pending"
+   ]
+  },
+  "c7_decide": {
+   "id": "c7_decide",
+   "title": "Above and Below",
+   "text": "The scouts say fifteen thousand dead are on the road, led by Malgareth's second host. The Wall and the Bell can hold them for a time. But a time is all you have.\n\nThe descent will take days. Food below is finite. The walls above are finite. Two clocks, running at once.\n\nAnd the Skull can only be in one place.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Take the Skull below. It makes the dead stop. The delve will go quicker, safer. The Bell rings plain above.",
+     "goto": "c7_party",
+     "fx": [
+      "set:skull_below"
+     ]
+    },
+    {
+     "text": "Leave the Skull in the Bell. Let it hold the wall, and go down without it.",
+     "goto": "c7_party",
+     "fx": [
+      "set:skull_above"
+     ]
+    }
+   ],
+   "on_enter": [
+    "if:levy_big?add:clock.siege:1"
+   ]
+  },
+  "c7_party": {
+   "id": "c7_party",
+   "title": "The Descent Party",
+   "text": "Who goes?\n\nRoland, to carry the standard. Durgan, who knows the stairs. Anselm, to hold the Skull. Theodore, who cannot be killed. Hetta, to scout.\n\nEveryone else holds the mountain: Aldric on the wall, Isobel at the ledgers, Ambrose at the Bell. You look at them all, and the whole kingdom looks back at you.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Open the door to the Deepholt. Descend.",
+     "goto": "c7_l1"
+    }
+   ]
+  },
+  "c7_l1": {
+   "id": "c7_l1",
+   "title": "Level One: The Wet Stair",
+   "text": "The First Hall is quiet. The doors to the stair stand open, and below them a great flight of steps drops into black water.\n\nDurgan lowers his lantern. \"Flooded since the first time we sealed it. The water is the lich's, not ours.\"\n\nThings move in it. They aren't breathing, but they are listening.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Wade through the flooded stair.",
+     "check": {
+      "stat": "CON",
+      "hit": "c7_l1_ok",
+      "mixed": "c7_l1_cost",
+      "miss": "c7_l1_bad"
+     }
+    },
+    {
+     "text": "Have Durgan cut a dry path along the wall. It will take a day.",
+     "goto": "c7_l1_ok",
+     "req": "durgan_sworn",
+     "fx": [
+      "add:clock.delve:1"
+     ]
+    },
+    {
+     "text": "Anselm lifts the Skull. The drowned stop.",
+     "goto": "c7_l1_ok",
+     "req": "skull_below"
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l1_ok": {
+   "id": "c7_l1_ok",
+   "title": "Down the Stair",
+   "text": "You reach the landing wet and cold and whole. Behind you the water closes like a held breath.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to Level Two.",
+     "goto": "c7_l2"
+    }
+   ],
+   "on_enter": [
+    "add:xp:1"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l1_cost": {
+   "id": "c7_l1_cost",
+   "title": "A Soaked Pack",
+   "text": "The supplies are spoiled by the water. You reach the landing but the packs are heavy and sour.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to Level Two.",
+     "goto": "c7_l2"
+    }
+   ],
+   "on_enter": [
+    "add:clock.delve:1"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l1_bad": {
+   "id": "c7_l1_bad",
+   "title": "Hands in the Water",
+   "text": "Something takes your ankle and pulls. By the time Roland hauls you free, you've swallowed half the stair, and the packs have gone under.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to Level Two.",
+     "goto": "c7_l2"
+    }
+   ],
+   "on_enter": [
+    "add:hp:-4",
+    "add:clock.delve:1"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l2": {
+   "id": "c7_l2",
+   "title": "Level Two: The Hoard",
+   "text": "A vault the size of a cathedral, filled to the rafters with treasure: heaped coin, gem-studded armour, ranks of gold idols, dwarven banners worked in silver thread. Everything the Deepholt lost, kept in mounds.\n\nDurgan stops walking. His hand is on his hammer, and the knuckles are white.\n\n\"My grandfather's crown,\" he says quietly. \"There. On the pile.\"\n\nThe coin murmurs. It is not a sound. It is the *impression* of a sound, as of something that wants.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Touch nothing. Walk the path through the middle.",
+     "goto": "c7_l3",
+     "fx": [
+      "add:clock.delve:1",
+      "add:xp:1"
+     ]
+    },
+    {
+     "text": "Take a purse. (+60 coin.)",
+     "goto": "c7_l2_purse",
+     "fx": [
+      "add:coin:60",
+      "set:took_hoard"
+     ]
+    },
+    {
+     "text": "Take the crown for Durgan. A king gives gifts.",
+     "goto": "c7_l2_crown",
+     "req": "durgan_sworn"
+    },
+    {
+     "text": "Scoop the treasure. The realm needs gold. (+200 coin.)",
+     "check": {
+      "stat": "DEX",
+      "hit": "c7_l2_loot",
+      "mixed": "c7_l2_wights",
+      "miss": "c7_l2_wights",
+      "hit_fx": [
+       "add:coin:200"
+      ]
+     },
+     "fx": [
+      "set:took_hoard"
+     ]
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l2_purse": {
+   "id": "c7_l2_purse",
+   "title": "A Little Weight",
+   "text": "You take only what fits in a pocket. The coins are cold. For a moment you could swear one of them *whispered*.\n\nRoland says nothing. Durgan says nothing. The silence is very loud.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to Level Three.",
+     "goto": "c7_l3"
+    }
+   ],
+   "on_enter": [
+    "add:clock.delve:1"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l2_crown": {
+   "id": "c7_l2_crown",
+   "title": "The Crown of Durgan's Grandfather",
+   "text": "You lift it down. The hoard sighs. The stone floor trembles, then settles. Durgan takes the crown with both hands and weeps openly.\n\n\"I have waited three hundred years to hold this.\"\n\nIt will matter later. Durgan does not forget a gift.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to Level Three.",
+     "goto": "c7_l3"
+    }
+   ],
+   "on_enter": [
+    "set:durgan_crown",
+    "add:xp:1",
+    "add:clock.delve:1"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l2_loot": {
+   "id": "c7_l2_loot",
+   "title": "A King's Ransom",
+   "text": "You load a canvas sack with a stranger's life's work. It is the most you have held since the Ford. The hoard does not seem to mind.\n\nYet.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to Level Three.",
+     "goto": "c7_l3"
+    }
+   ],
+   "on_enter": [
+    "add:clock.delve:1"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l2_wights": {
+   "id": "c7_l2_wights",
+   "title": "Hoard-Wights",
+   "text": "The coins stand up. Not literally, though they might as well: the pile coughs up a dozen things in dead-gold armour, hollow-eyed, bearing the shapes of dwarves long buried.\n\nThey come for you.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Fight them with Roland and Theodore.",
+     "goto": "c7_l3",
+     "fx": [
+      "add:hp:-4",
+      "add:clock.delve:1"
+     ]
+    },
+    {
+     "text": "Anselm lifts the Skull. They stop.",
+     "goto": "c7_l3",
+     "req": "skull_below",
+     "fx": [
+      "add:clock.delve:1"
+     ]
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l3": {
+   "id": "c7_l3",
+   "title": "Level Three: The Drowned Barracks",
+   "text": "Rows of stone bunks. A long, low hall. In every bunk, a body: wet, grey, motionless. Six hundred of them, or more. They sleep with their eyes open.\n\nAt the far end of the hall, a man in rusted mail is chained to a pillar. He is alive. He lifts his head as you approach.\n\n{{bors_taken|It is Sir Bors.}}{{!bors_taken|He is a stranger — a prisoner of the lich, human, half-starved.}}",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Cross the hall in silence. Do not wake them.",
+     "check": {
+      "stat": "DEX",
+      "hit": "c7_l3_ok",
+      "mixed": "c7_l3_wake",
+      "miss": "c7_l3_wake"
+     }
+    },
+    {
+     "text": "Anselm lifts the Skull. Walk through them.",
+     "goto": "c7_l3_ok",
+     "req": "skull_below"
+    },
+    {
+     "text": "Theodore walks ahead. The undying knight cannot be harmed by them.",
+     "goto": "c7_l3_theo",
+     "req": "theodore_back"
+    }
+   ],
+   "on_enter": [
+    "add:clock.siege:1"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l3_ok": {
+   "id": "c7_l3_ok",
+   "title": "Past the Sleepers",
+   "text": "You cross the hall. The dead do not stir. At the pillar the chained man raises his head, and the lamp reveals his face.\n\n{{bors_taken|It is Bors.}}",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Free the prisoner.",
+     "goto": "c7_l3_free"
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l3_theo": {
+   "id": "c7_l3_theo",
+   "title": "The Undying Walks First",
+   "text": "Theodore walks down the aisle between the bunks, hand on his sword. The sleepers turn their heads to follow him and do not rise. The undying knight reaches the pillar first and cuts the chain.\n\n\"I know this face,\" he says. \"He rode with me.\"",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Take the prisoner.",
+     "goto": "c7_l3_free"
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l3_wake": {
+   "id": "c7_l3_wake",
+   "title": "They Wake",
+   "text": "A bunk creaks. Then another. Then six hundred wet hands push against stone, and the whole hall sits up together.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Run for the pillar. Cut the prisoner free and go.",
+     "goto": "c7_l3_free",
+     "fx": [
+      "add:hp:-5",
+      "add:clock.delve:1"
+     ]
+    },
+    {
+     "text": "Anselm lifts the Skull.",
+     "goto": "c7_l3_ok",
+     "req": "skull_below",
+     "fx": [
+      "add:clock.delve:1"
+     ]
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l3_free": {
+   "id": "c7_l3_free",
+   "title": "The Prisoner",
+   "text": "{{bors_taken|\"Sire,\" says Bors, with a voice like a rusted hinge. \"I held out as long as I could. Not very long.\"}}{{!bors_taken|The man is Sir Garrick of the old garrison — one of the Deepholt's human wardens. \"Six years,\" he says. \"I thought it was six years.\"}}\n\nHe is thin, bearded, and alive. That is more than you expected.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Share your rations. Bring him with you.",
+     "goto": "c7_l4",
+     "fx": [
+      "add:clock.delve:1",
+      "if:bors_taken?court:+Bors",
+      "if:bors_taken?set:bors_saved",
+      "add:xp:1"
+     ]
+    },
+    {
+     "text": "Send him up with Hetta. He is too weak to follow.",
+     "goto": "c7_l4",
+     "fx": [
+      "if:bors_taken?court:+Bors",
+      "if:bors_taken?set:bors_saved",
+      "add:xp:1"
+     ]
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l4": {
+   "id": "c7_l4",
+   "title": "Level Four: The Sunless Market",
+   "text": "A great square of stone shopfronts, long vacated, lit by a cold, steady green glow. Stalls hold bone-carved wares, books of grey skin, dolls with too many joints.\n\nIn the centre of the square, seated on a plain stool, the grey-robed lich Malgareth is waiting.\n\n\"King Gregory,\" he says gently. \"Sit. We have so little time, and so much to say.\"",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Sit. Hear him out.",
+     "goto": "c7_malgareth"
+    },
+    {
+     "text": "Draw steel. End this now.",
+     "goto": "c7_malg_fight"
+    },
+    {
+     "text": "Refuse to sit. Stand and speak.",
+     "goto": "c7_malg_stand"
+    }
+   ],
+   "on_enter": [
+    "add:clock.siege:1"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_malgareth": {
+   "id": "c7_malgareth",
+   "title": "A Lich's Offer",
+   "text": "He has a quiet, scholarly manner. \"The god below is not my master. It is my jailer. It took me at the Ford of an older river, three hundred years ago, and I have served ever since. I do not enjoy it.\"\n\nHe lifts one gloved hand. \"Give me the Skull. I will use it to put it down. I have studied the Skull for three centuries. You have carried it for three weeks. Which of us is better qualified?\"\n\nIt is the most reasonable offer you have heard in two years.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "\"No. I will not hand the Skull to you.\"",
+     "goto": "c7_malg_no"
+    },
+    {
+     "text": "\"Tell me how to kill it. Tell me the weakness.\"",
+     "check": {
+      "stat": "CHA",
+      "hit": "c7_malg_weakness",
+      "mixed": "c7_malg_half",
+      "miss": "c7_malg_lie"
+     }
+    },
+    {
+     "text": "Consider it. (Hand over the Skull.)",
+     "goto": "c7_malg_deal",
+     "req": "skull_below"
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_malg_no": {
+   "id": "c7_malg_no",
+   "title": "A Disappointed Scholar",
+   "text": "\"A pity,\" says Malgareth. He gets to his feet, brushing dust from his robes. \"I do not have the strength to take it from you. I had hoped you would be persuadable.\"\n\nHe steps aside. \"The stair is that way. I shall wait here. Perhaps we will speak again.\"",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to Level Five.",
+     "goto": "c7_l5"
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_malg_weakness": {
+   "id": "c7_malg_weakness",
+   "title": "The Truth, For Once",
+   "text": "Malgareth hesitates for a long moment. The green light flickers.\n\n\"It is bound to its hoard. Every coin is a nail in its coffin. If the hoard is scattered, it weakens. If the Skull is raised in its throne-room, it *stops*.\"\n\nHe looks almost relieved. \"I have never told anyone that. It took me three centuries to find the courage.\"",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to Level Five.",
+     "goto": "c7_l5"
+    }
+   ],
+   "on_enter": [
+    "set:knows_weakness",
+    "add:xp:1",
+    "add:gambit:2"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_malg_half": {
+   "id": "c7_malg_half",
+   "title": "A Half-Truth",
+   "text": "\"The Skull is a part of it,\" he says carefully. \"And the hoard is a part. But I do not know all the parts.\"\n\nIt is not nothing.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to Level Five.",
+     "goto": "c7_l5"
+    }
+   ],
+   "on_enter": [
+    "set:knows_weakness",
+    "add:gambit:1"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_malg_lie": {
+   "id": "c7_malg_lie",
+   "title": "A Lie",
+   "text": "He smiles his small, old smile. \"Strike it in the heart,\" says Malgareth, and says nothing more. You are not certain he told you the truth.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to Level Five.",
+     "goto": "c7_l5"
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_malg_deal": {
+   "id": "c7_malg_deal",
+   "title": "The Skull Changes Hands",
+   "text": "You hold out the box. Malgareth takes it with both hands, as one takes a newborn. He lifts the lid.\n\nThe Skull lies in its cloth. Malgareth looks at it for a very long time.\n\nThen he closes the lid and hands it back.\n\n\"You would have given it to me,\" he says wonderingly. \"I did not think anyone would.\"\n\nHe steps aside. \"Go down. I will not follow. I am tired of following.\"",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to Level Five.",
+     "goto": "c7_l5"
+    }
+   ],
+   "on_enter": [
+    "set:malgareth_trusted",
+    "add:xp:2"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_malg_stand": {
+   "id": "c7_malg_stand",
+   "title": "Words Standing Up",
+   "text": "You do not sit. Malgareth lifts one eyebrow, amused, and lets the silence drag.\n\n\"As you wish,\" he says. \"The question stands.\"",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "\"No.\"",
+     "goto": "c7_malg_no"
+    },
+    {
+     "text": "Draw steel.",
+     "goto": "c7_malg_fight"
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_malg_fight": {
+   "id": "c7_malg_fight",
+   "title": "Steel on Bone",
+   "text": "Roland and Theodore charge. Malgareth is no swordsman, but he does not need to be: the green light flares, and the stalls of the Market begin to stand up, shelf by shelf, and come for you.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Hold the line.",
+     "check": {
+      "stat": "STR",
+      "hit": "c7_malg_win",
+      "mixed": "c7_malg_drive",
+      "miss": "c7_malg_drive"
+     }
+    },
+    {
+     "text": "Anselm lifts the Skull.",
+     "goto": "c7_malg_skull",
+     "req": "skull_below"
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_malg_win": {
+   "id": "c7_malg_win",
+   "title": "The Steward Falls Back",
+   "text": "The lich staggers, gutted by Roland's blade, and vanishes into the green dark with a hiss.\n\nHe will not die. But he is wounded, and the road to the fifth level is open.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to Level Five.",
+     "goto": "c7_l5"
+    }
+   ],
+   "on_enter": [
+    "add:xp:2",
+    "add:hp:-2"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_malg_drive": {
+   "id": "c7_malg_drive",
+   "title": "Overrun",
+   "text": "The Market overwhelms you. Theodore holds the stair so the rest of you can retreat. It is an expensive retreat.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to Level Five.",
+     "goto": "c7_l5"
+    }
+   ],
+   "on_enter": [
+    "add:hp:-6",
+    "add:clock.delve:1"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_malg_skull": {
+   "id": "c7_malg_skull",
+   "title": "Stopped",
+   "text": "Anselm lifts the Skull. The stalls fall back into silence. Malgareth stares at it from across the square, and something in his face breaks.\n\n\"Take it away,\" he says in a very small voice. \"*Please.*\"\n\nHe retreats into the dark.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to Level Five.",
+     "goto": "c7_l5"
+    }
+   ],
+   "on_enter": [
+    "add:xp:1",
+    "set:malgareth_broken"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l5": {
+   "id": "c7_l5",
+   "title": "Level Five: The Cistern of Names",
+   "text": "A round hall, a great black cistern in the centre, lined with the names of the dead. Thousands. Each carved in a different hand.\n\nAnselm kneels at the edge of the water and reads, his lips moving.\n\n\"They're all here,\" he says. \"Every soul it took. It keeps them.\"\n\nThe water begins to ripple, as though something very large has noticed you.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Read the names aloud. Give them back their dead.",
+     "goto": "c7_l5_read"
+    },
+    {
+     "text": "Cross quickly. There is no time for grief.",
+     "goto": "c7_l6",
+     "fx": [
+      "add:clock.delve:1"
+     ]
+    },
+    {
+     "text": "Break the cistern. Let the names go.",
+     "goto": "c7_l5_break",
+     "req": "durgan_sworn"
+    }
+   ],
+   "on_enter": [
+    "if:skull_below?add:clock.siege:1"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l5_read": {
+   "id": "c7_l5_read",
+   "title": "The Reading of the Names",
+   "text": "It takes an hour. Anselm reads. Alcuin, who is not even here — you realise it is Roland reading, in a voice you have never heard from him.\n\nWhen you are finished the water is still. Something in the black has turned, and let go.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to the last stair.",
+     "goto": "c7_l6"
+    }
+   ],
+   "on_enter": [
+    "add:clock.delve:1",
+    "add:xp:2",
+    "set:names_read",
+    "add:hp:4"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l5_break": {
+   "id": "c7_l5_break",
+   "title": "Durgan's Hammer",
+   "text": "Durgan brings his hammer down once, twice, three times on the lip of the cistern. The stone cracks. The water drains away into the rock with a sound like a long exhale.\n\n\"There,\" he says. \"Let them rest.\"",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Go on to the last stair.",
+     "goto": "c7_l6"
+    }
+   ],
+   "on_enter": [
+    "add:xp:1",
+    "add:clock.delve:1",
+    "set:cistern_broken"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_l6": {
+   "id": "c7_l6",
+   "title": "Level Six: The Door",
+   "text": "The last stair ends at a door of black iron, the height of three men. Hinges the size of a bull. A single keyhole, no bigger than your thumb.\n\nAmbrose's sealed letter is in your pocket, as he promised. You break the wax and read the name. You do not speak it. You do not need to.\n\nFrom behind the door comes the grinding hum you first heard in the Great Hall: the sound of something enormous, thinking.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Open the door.",
+     "goto": "c7_throne"
+    },
+    {
+     "text": "Turn back. Seal the door again. You have done enough.",
+     "goto": "end_flight"
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_throne": {
+   "id": "c7_throne",
+   "title": "The Throne of the Hoarder",
+   "text": "It is not a throne-room. It is the heart of a mountain, hollowed and lined with gold. A single seat of fused coin and bone. And upon it, the thing that calls itself a god.\n\nIt is not shaped like a man. It is not shaped like anything. It is a column of the dead, standing, bound by sinew and coin into a form that watches you with four hundred eyes.\n\n\"King Gregory,\" it says, in every voice it has ever eaten. \"You have brought my bones back to me.\"\n\nIt means the Skull.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Anselm lifts the Skull. End it.",
+     "goto": "c7_final_skull",
+     "req": "skull_below"
+    },
+    {
+     "text": "Charge it with your sword. Roland and Theodore at your side.",
+     "goto": "c7_final_fight"
+    },
+    {
+     "text": "Use the scattered hoard: break the coin-throne and unbind it.",
+     "check": {
+      "stat": "INT",
+      "hit": "c7_final_hoard",
+      "mixed": "c7_final_fight",
+      "miss": "c7_final_fight"
+     },
+     "req": "knows_weakness"
+    },
+    {
+     "text": "Listen. Hear what the god has to offer a king.",
+     "goto": "c7_final_bargain"
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_final_skull": {
+   "id": "c7_final_skull",
+   "title": "The Skull Raised",
+   "text": "Anselm lifts the Skull and the whole chamber goes still.\n\nThe god sees it. It knows what it is. It opens its four hundred mouths and screams, and the scream is the sound of every soul it ever kept, rising at once.\n\nThen the god *stops*. Coin by coin, bone by bone, the thing on the throne comes apart, and what is left is a dry, grey drift, like ash.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Stand over what remains.",
+     "goto": "c8_victory_hub"
+    }
+   ],
+   "on_enter": [
+    "add:xp:3",
+    "set:god_dead"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_final_hoard": {
+   "id": "c7_final_hoard",
+   "title": "The Throne Broken",
+   "text": "You see it all at once: the coin and bone and gold lashed into a body. You see where the seams are, and which nail holds the rest.\n\n\"Durgan,\" you say. \"The third rank from the left. The great banner-pole.\"\n\nThe dwarf's hammer comes down like a falling star.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Watch it come apart.",
+     "goto": "c8_victory_hub"
+    }
+   ],
+   "on_enter": [
+    "add:xp:3",
+    "set:god_dead",
+    "set:hoard_scattered"
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_final_fight": {
+   "id": "c7_final_fight",
+   "title": "The Last Battle",
+   "text": "The god fights as a dozen men would: a hundred arms, a hundred swords. Roland takes a blow meant for you. Theodore, the undying, simply stands in the doorway and refuses to move.\n\nYou hack at the throne with a king's sword and a king's courage. It is not enough. It is never enough.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Press on. (Spend a Gambit.)",
+     "goto": "c8_victory_hub",
+     "req": "gambit>=1",
+     "fx": [
+      "add:gambit:-1",
+      "add:hp:-6",
+      "set:god_dead",
+      "add:xp:2"
+     ]
+    },
+    {
+     "text": "Anselm lifts the Skull at the last moment.",
+     "goto": "c7_final_skull",
+     "req": "skull_below"
+    },
+    {
+     "text": "Throw everything into one last charge.",
+     "check": {
+      "stat": "STR",
+      "hit": "c8_victory_hub",
+      "mixed": "c8_victory_hub",
+      "miss": "end_death",
+      "hit_fx": [
+       "set:god_dead",
+       "add:xp:2"
+      ],
+      "mixed_fx": [
+       "set:god_dead",
+       "add:hp:-8",
+       "add:xp:1"
+      ]
+     }
+    },
+    {
+     "text": "Fall back. This was a mistake.",
+     "goto": "end_death"
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c7_final_bargain": {
+   "id": "c7_final_bargain",
+   "title": "The Hollow Crown",
+   "text": "The god leans forward. \"A king without a kingdom. A man with a skull he cannot use. I offer you what you wanted at the Ford: a crown that cannot be taken. A realm that will not die. A people who will never leave you.\"\n\nIts voice is very gentle.\n\n\"Kneel.\"",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Refuse. Stand and fight.",
+     "goto": "c7_final_fight"
+    },
+    {
+     "text": "Kneel.",
+     "goto": "end_bargain"
+    }
+   ],
+   "redirect": [
+    {
+     "if": "clock.siege>=6",
+     "goto": "end_siege"
+    },
+    {
+     "if": "clock.delve>=6",
+     "goto": "end_starve"
+    }
+   ]
+  },
+  "c8_victory_hub": {
+   "id": "c8_victory_hub",
+   "title": "The Quiet",
+   "text": "The hum is gone. For the first time in a thousand years, the mountain is silent.\n\nAbove, a long way up, a bell rings. It sounds like the end of something.",
+   "chapter": "Chapter VII — The Descent",
+   "choices": [
+    {
+     "text": "Carry the Skull back up. The war is over.",
+     "goto": "end_triumph"
+    },
+    {
+     "text": "Stay below. Keep the Skull here, with the thing that cannot be allowed to rise again.",
+     "goto": "end_sacrifice"
+    }
+   ]
+  },
+  "end_triumph": {
+   "id": "end_triumph",
+   "title": "The Kingdom Under the Mountain",
+   "text": "You climb for two days. At the top of the stair the sun is a white wound in the sky, and the dead are lying on the slope of the mountain like fallen wheat. Aldric is on the wall. He sees the standard and begins to weep.\n\nThe horde does not rise. Malgareth's host lies still across a hundred miles of road.\n\n{{bors_saved|Bors rides at your side in the procession, thin and quiet, and keeps his sword drawn for a month.}}{{theodore_back|Theodore, the undying, takes the Wall. He does not sleep. He does not need to.}}{{isobel_durgan|Isobel and Durgan hold the Great Hall together, and the dwarves rebuild it in her name.}}{{heir_frail|Your son sees the sun for the first time on the day you return. He cries, loud for once, and Saoirse laughs until she weeps.}}{{durgan_crown|Durgan wears his grandfather's crown at the coronation, and swears a second time.}}\n\nYou do not sit on a throne. You sit on a stool by the fire in the Great Hall of the Deepholt, with a pipe in your mouth, and watch your people eat.\n\nIt is enough.",
+   "chapter": "Chapter VII — The Descent",
+   "ending": "TRIUMPH — The Kingdom Under the Mountain"
+  },
+  "end_sacrifice": {
+   "id": "end_sacrifice",
+   "title": "The King Under the Mountain",
+   "text": "You send Roland up with the standard, and Anselm with the box. You stay, with Durgan, who refuses to leave, and Theodore, who cannot.\n\nThe door seals behind you. The three of you sit on the stone steps of a ruined throne-room and wait, as the god's ashes settle, in the dark.\n\nYears later, the scholars say, a light is seen burning in the deepest window of the Deepholt. A king keeps watch.",
+   "chapter": "Chapter VII — The Descent",
+   "ending": "SACRIFICE — The King Under the Mountain"
+  },
+  "end_bargain": {
+   "id": "end_bargain",
+   "title": "The Hollow Crown",
+   "text": "You kneel. The god puts its crown on your head: a ring of gold and bone and screaming faces.\n\nFor a thousand years you rule. Your Court never leaves you. Your people never die. They do not sleep, or eat, or leave. They simply stand in rows in the Great Hall of the Deepholt, eyes open, and obey.\n\nRoland is the last to look at you with recognition. He kneels, too, and weeps, and does not rise.",
+   "chapter": "Chapter VII — The Descent",
+   "ending": "BARGAIN — The Hollow Crown"
+  },
+  "end_flight": {
+   "id": "end_flight",
+   "title": "The Long Road",
+   "text": "You seal the door behind you. Durgan sets the stone. Anselm says the old prayer. You climb.\n\nThe god below does not wake. Not that year. Not that decade. You and your people live in the mountain for a generation, and then, when you are old and the walls are strong, you wander back down to the lowlands and teach your grandchildren to listen at night for a sound beneath the floor.\n\nYou have not won. But you have not lost.",
+   "chapter": "Chapter VII — The Descent",
+   "ending": "FLIGHT — The Long Road"
+  },
+  "end_siege": {
+   "id": "end_siege",
+   "title": "The Walls Fall",
+   "text": "You hear it first as a bell, ringing wild: Ambrose, shouting down the stair. Then the sound stops.\n\nBy the time you climb out, the mountain is burning. Isobel's ledger lies in the courtyard, pages scattered. Aldric's sword is in the stone beside the gate.\n\nThe dead have taken everything. You have the Skull. You have no one left to protect with it.",
+   "chapter": "Chapter VII — The Descent",
+   "ending": "THE WALLS FALL"
+  },
+  "end_starve": {
+   "id": "end_starve",
+   "title": "The Dark Below",
+   "text": "The food runs out on the fifth day. The lamps run out on the sixth. On the seventh, you sit in the dark with Roland, who says he is not hungry, and Theodore, who does not need to be.\n\nYears later, someone finds your standard on the stair of the sixth level, folded neatly on a rock.",
+   "chapter": "Chapter VII — The Descent",
+   "ending": "THE DARK BELOW"
+  },
+  "death": {
+   "id": "death",
+   "title": "Gregory VII Falls",
+   "text": "You fall.\n\nThe last thing you see is Roland's face, white and furious, and the standard going down behind you like a flag in a storm.\n\nThere is no one to carry the Skull now. There is only the dark, and the voice of the god, patient, pleased.",
+   "chapter": "Chapter VII — The Descent",
+   "ending": "DEATH — Here Lies Gregory the Exiled"
+  },
+  "end_death": {
+   "id": "end_death",
+   "title": "A Fatal Error",
+   "text": "You fall back too late. The god's reach is long.",
+   "chapter": "Chapter VII — The Descent",
+   "ending": "DEATH — A Fatal Error"
+  }
+ }
+}
